@@ -5,8 +5,7 @@
 ?>
 
 
-<div class="home-signup-form">
-	<div class="form">
+<form action="?action=process" method="post">
 		<div>
 			<label for="firstName">First Name</label>
 			<input name="firstName" id="firstName" type="text" placeholder="ex: John">
@@ -25,14 +24,13 @@
 		</div>
 		<div>
 			<label for="password">Password</label>
-			<input name="password" id="password" type="text">
+			<input type="password" name="password" id="password" type="text">
 		</div>
 		<div>
 			<label for="confirmPassword">Confirm Password</label>
-			<input name="confirmPassword" id="confirmPassword" type="text">
+			<input type="password" name="confirmPassword" id="confirmPassword" type="text">
 		</div>
 		<button "sign_up" class="button-submit home-sign-up">
 			Sign Up
 		</button>
-	</div>
-</div>
+</form>
