@@ -22,6 +22,7 @@
 			<span class="add-note">Create a note</span>
 			<div class="note-list">
 			
+			<?php for($i = 0; $i < 10; $i++):?>
 			
 				<div class="note-item">
 					<div class="note">
@@ -39,11 +40,13 @@
 					</div><!-- END CONTROLS DIV -->
 				</div><!-- END NOTE ITEM DIV -->
 				
+				<?php endfor; ?>
 				
 			</div><!-- END NOTE LIST DIV -->
 		</div><!-- END MAIN DIV -->
 		
 		<div class="note-nav">
+		<br><br>
 			<input type="text" id="search" placeholder="Search..."/>
 			<ul class="categories">
 				<li>Category 1

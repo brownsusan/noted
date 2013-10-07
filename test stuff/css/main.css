@@ -1,9 +1,13 @@
-.note-nav {
+body{
+	margin: 0;
+}
+
+.note-nav{
 	float: left;
 	padding: 1.5%;
 	left: 0px;
 	background: aqua;
-	position: absolute;
+	position: fixed;
 	width: 20%;
 	height: 100%;
 	float: left;
@@ -18,6 +22,11 @@
 
 header {
 	height: 40px;
+	width: 100%;
+	background: yellow;
+	line-height: 40px;
+	position: fixed;
+	z-index: 1000;
 }
 
 .home-login {
@@ -28,8 +37,8 @@ header {
 	margin: 0 auto;
 	width: 55em;
 }
-.note-item {
-	margin-top: 15px;
+.note-item{
+	margin-top: 50px;
 	clear: both;
 }
 .note {
