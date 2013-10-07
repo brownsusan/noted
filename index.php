@@ -28,22 +28,22 @@ if(!empty($_GET['action'])){
 			print('Match');
 		}else{
 			print('Not a match');
-		};
+		}
 		if(preg_match("/^[a-zA-Z]+(([\'\,\.\-][a-zA-Z])?[a-zA-Z]*)*$/", $lastName)){
 			print('Match');
 		}else{
 			print('Not a match');
-		};
+		}
 		if(preg_match("/^(?=.{1,15}$)[a-zA-Z][a-zA-Z0-9]*(?: [a-zA-Z0-9]+)*$/", $username)){
 			print('Match');
 		}else{
 			print('Not a match');
-		};
+		}
 		if(preg_match("/^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/", $email)){
 			print('Match');
 		}else{
 			print('Not a match');
-		};
+		}
 /*
 		Password matching expression. 
 		Password must be at least 8 characters, 
@@ -56,12 +56,12 @@ if(!empty($_GET['action'])){
 			print('Match');
 		}else{
 			print('Not a match');
-		};
+		}
 		if($password == $confirmPassword){
 			
 		}else{
 			print('Not a match');
-		};
+		}
 	}
 }else{
 	$viewModel->getView("views/body.php", $data);
