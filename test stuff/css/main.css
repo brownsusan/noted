@@ -1,4 +1,4 @@
-.note-nav{
+.note-nav {
 	float: left;
 	padding: 1.5%;
 	left: 0px;
@@ -9,29 +9,30 @@
 	float: left;
 }
 
-.main{
+.main {
 	background: fuchsia;
 	float: right;
 	width: 75%;
 	padding: 1.5%;
 }
 
-header{
+header {
 	height: 40px;
 }
 
-.home-login{
+.home-login {
 	float: right;
 }
 
-.note-list{
+.note-list {
 	margin: 0 auto;
 	width: 55em;
 }
-.note-item{
+.note-item {
 	margin-top: 15px;
+	clear: both;
 }
-.note{
+.note {
 	background: green;
 	width: 50em;
 	padding: 10px;
@@ -40,7 +41,7 @@ header{
 	clear: both;
 }
 
-.add-note{
+.add-note {
 	width: 100px;
 	display: block;
 	margin: 0 auto 30px;
