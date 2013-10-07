@@ -3,7 +3,7 @@
 	padding: 1.5%;
 	left: 0px;
 	background: aqua;
-	position: fixed;
+	position: absolute;
 	width: 20%;
 	height: 100%;
 	float: left;
