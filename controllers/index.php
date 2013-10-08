@@ -1,10 +1,11 @@
 <?php
 
 require ('models/viewModel.php');
+require ('models/userModel.php');
 
 // create the view model so we can use it to load views
 $viewModel = new viewModel();
-
+$userModel = new userModel();
 // create an object (assosiative array) to pass to the header view
 $data = array('name' => 'susie');
 $viewModel -> getView('views/template/header.php', $data);
@@ -84,4 +85,7 @@ if ($_GET['action'] == 'form') {
 	} else {
 		print('Not a match');
 	}
+} else if ($_GET['action']=="users"){
+	$data = $userModel -> getUsers();
+	var_dump($data);
 }
