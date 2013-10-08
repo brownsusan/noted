@@ -2,8 +2,6 @@
 //dynamic content code
 ?>
 <div class="note-nav">
-	<br>
-	<br>
 	<input type="text" id="search" placeholder="Search..."/>
 	<ul class="categories">
 		<li>Category 1

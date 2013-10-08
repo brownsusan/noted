@@ -89,7 +89,11 @@ if ($_GET['action'] == 'form') {
 } else if ($_GET['action']=="users"){
 	$data = $userModel -> getUsers();
 	$viewModel->getView("../views/app/body.php", $data);
+	$viewModel->getView("../views/app/nav.php", $data);
 /* 	var_dump($data); */
 
 	
+} else if ($_GET['action']=="updateuser"){
+	$data = $userModel -> getUsers($_GET["id"]);
+	$viewModel->getView("../views/form/updateUserForm.php", $data);
 }

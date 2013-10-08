@@ -7,15 +7,12 @@ foreach($data as $user){
 	echo ($user["lastname"]."<br>");
 	echo ($user["email"]."<br>");
 	echo ("<a href='?action=delete'> delete</a>");
-	echo ("<a href='?action=updateform&prid=".$user["id"]."'> update</a>");
+	echo ("<a href='?action=updateuser&id=".$user["id"]."'> update</a>");
 	echo ("<br><br>");
 }
 
 ?>
 <!-- add in side div -->
-
-
-<h1>H1 in the App Body View</h1>
 
 
 <div class='main'>

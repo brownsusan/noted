@@ -1,12 +1,13 @@
 body {
 	margin: 0;
+	font-family: helvetica;
 }
 
 .note-nav {
 	float: left;
 	padding: 1.5%;
 	left: 0px;
-	background: aqua;
+	background: #999;
 	position: fixed;
 	width: 20%;
 	height: 100%;
@@ -14,7 +15,7 @@ body {
 }
 
 .main {
-	background: fuchsia;
+	background: #555;
 	float: right;
 	width: 75%;
 	padding: 1.5%;
@@ -23,7 +24,7 @@ body {
 header {
 	height: 40px;
 	width: 100%;
-	background: yellow;
+	background: white;
 	line-height: 40px;
 	position: fixed;
 	z-index: 1000;
@@ -34,7 +35,7 @@ header {
 #header_placeholder {
 	height: 40px;
 	width: 100%;
-	background: yellow;
+	background: white;
 }
 
 .home-login {
@@ -50,7 +51,8 @@ header {
 	clear: both;
 }
 .note {
-	background: green;
+	background: #111;
+	color: white;
 	width: 50em;
 	padding: 10px;
 	float: left;
