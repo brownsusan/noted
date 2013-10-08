@@ -38,7 +38,7 @@ header{
 	width: 55em;
 }
 .note-item{
-	margin-top: 50px;
+	margin-top: 30px;
 	clear: both;
 }
 .note{
@@ -54,4 +54,8 @@ header{
 	width: 100px;
 	display: block;
 	margin: 0 auto 30px;
+}
+
+.clear-fix{
+	clear: both;
 }
