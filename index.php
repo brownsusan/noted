@@ -10,8 +10,7 @@ $data = array('name' => 'susie');
 $viewModel -> getView('views/template/header.php', $data);
 
 // if no action is given we obviously are at the root of the site
-// thus we should load the main page
-// so load the landing page
+// thus we should load the landing page
 if (empty($_GET['action'])) {
 
 	// load the landing view
