@@ -1,22 +1,14 @@
 <?php
 
 require ('models/viewModel.php');
-require ('models/noteModel.php');
-
-// create the view model so we can use it to load views
-$viewModel = new viewModel();
-$noteModel = new noteModel();
-
-// create an object (assosiative array) to pass to the header view
-$data = array('name' => 'susie');
-$viewModel -> getView('views/template/header.php', $data);
 
 // if no action is given we obviously are at the root of the site
 // thus we should load the landing page
 if (empty($_GET['action'])) {
 
 	// load the landing view
-	$viewModel -> getView('views/landing/body.php', $data);
+	// $viewModel -> getView('views/landing/body.php', $data);
+	require 'controllers/landing.php';
 	exit ;
 
 }
@@ -25,13 +17,14 @@ if (empty($_GET['action'])) {
 if ($_GET['action'] == 'app') {
 
 	// load the app view
-	$viewModel -> getView('views/app/nav.php', $data);
-	$viewModel -> getView('views/app/body.php', $data);
-	exit;
+	// $viewModel -> getView('views/app/nav.php', $data);
+	// $viewModel -> getView('views/app/body.php', $data);
+	require 'controllers/app.php';
+	exit ;
 
 }
 
-
+/********** CLASS EXAMPLE **********/
 // this is temp from class
 // decide the what other page to load
 if ($_GET['action'] == 'form') {
@@ -87,19 +80,18 @@ if ($_GET['action'] == 'form') {
 		print('Not a match');
 	}
 	//Here I would want to be getting the notes.
-} else if ($_GET['action']=="notes"){
+} else if ($_GET['action'] == "notes") {
 	$data = $noteModel -> getNotes();
-	$viewModel->getView("views/app/body.php", $data);
-	$viewModel->getView("views/app/nav.php", $data);
-/* 	var_dump($data); */
+	$viewModel -> getView("views/app/body.php", $data);
+	$viewModel -> getView("views/app/nav.php", $data);
+	/* 	var_dump($data); */
 
-	
-} else if ($_GET['action']=="updateform"){
+} else if ($_GET['action'] == "updateform") {
 	$data = $noteModel -> getNotes($_GET["id"]);
-	$viewModel->getView("views/form/updateUserForm.php", $data);
-} else if ($_GET['action']=="updateuser"){
+	$viewModel -> getView("views/form/updateUserForm.php", $data);
+} else if ($_GET['action'] == "updateuser") {
 	$noteModel -> updateUser($_POST['id'], $_POST['username']);
-	$data = $noteModel->getNotes();
+	$data = $noteModel -> getNotes();
 	$viewModel -> getView('views/app/body.php', $data);
 	$viewModel -> getView('views/app/nav.php', $data);
 }

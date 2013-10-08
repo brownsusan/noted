@@ -16,36 +16,13 @@ foreach($data as $user){
 ?>
 <!-- add in side div -->
 
-
 <div class='main'>
 	<span class="add-note">Create a note</span>
 	<div class="note-list">
-		<?php foreach($data as $note):?>
-		<div class="note-item">
-			<div class="note">
-				<div class="note-header">
-					<span class="note-title"><?php $note["title"] ?></span>
-					<span class="note-category">NOTE CATEGORY</span>
-				</div>
-				<!-- END HEADER DIV -->
-				<div class="note-body">
-					<p>
-						NOTE BODY HERE NOTE BODY HERE NOTE BODY HERE NOTE BODY HERE NOTE BODY HERE NOTE BODY HERE NOTE BODY HERE NOTE BODY HERE NOTE BODY HERE NOTE BODY HERE NOTE BODY HERE NOTE BODY HERE NOTE BODY HERE NOTE BODY HERE NOTE BODY HERE NOTE BODY HERE NOTE BODY HERE NOTE BODY HERE NOTE BODY HERE NOTE BODY HERE NOTE BODY HERE NOTE BODY HERE NOTE BODY HERE NOTE BODY HERE NOTE BODY HERE NOTE BODY HERE NOTE BODY HERE NOTE BODY HERE NOTE BODY HERE NOTE BODY HERE NOTE BODY HERE NOTE BODY HERE NOTE BODY HERE NOTE BODY HERE NOTE BODY HERE NOTE BODY HERE NOTE BODY HERE NOTE BODY HERE NOTE BODY HERE NOTE BODY HERE NOTE BODY HERE.
-					</p>
-				</div>
-				<!-- END CONTROLS DIV -->
-			</div>
-			<!-- END NOTE DIV -->
-			<div class="note-controls">
-				<span class="note-edit">E</span><br>
-				<span class="note-delete">D</span>
-			</div>
-			<!-- END CONTROLS DIV -->
-			<div class="clear-fix">
-			</div>
-		</div>
-		<!-- END NOTE ITEM DIV -->
-		<?php endforeach; ?>
+		<?php foreach($data as $note){
+			$viewModel = new viewModel();
+			$viewModel -> getView('views/ui/note.php', $note);
+		}?>
 	</div>
 	<!-- END NOTE LIST DIV -->
 </div>
