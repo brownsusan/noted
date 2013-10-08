@@ -2,24 +2,11 @@
 
 class noteModel{
 	public function getNotes(){
-		/*$db=new PDO("mysql:hostname=localhost;dbname=ssl_note","root","root");
+		$db=new PDO("mysql:hostname=localhost;dbname=ssl_note","root","root");
 		$st = $db->prepare("select * from notes");
 		$st->execute();
 		$obj = $st->fetchAll();
-		//return $obj;*/
-		
-		// HACK
-		$notes = array(
-			array('title' => 'Something', 'body' => 'Some shit'),
-			array('title' => 'Something2', 'body' => 'Some shit'),
-			array('title' => 'Something3', 'body' => 'Some shit'),
-			array('title' => 'Something4', 'body' => 'Some shit'),
-			array('title' => 'Something4', 'body' => 'Some shit'),
-			array('title' => 'Something5', 'body' => 'Some shit'),
-		);
-		
-		return $notes;
-		
+		return $obj;
 	}
 	
 /* 	CHANGE PARAMETERS TO MATCH THE TABLE */
