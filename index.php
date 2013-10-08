@@ -19,6 +19,7 @@ if (empty($_GET['action'])) {
 
 }
 
+// if the app is being loaded
 if ($_GET['action'] == 'app') {
 
 	// load the app view
