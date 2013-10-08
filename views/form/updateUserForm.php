@@ -2,10 +2,12 @@
 
 	<form action="?action=updateuser" method="post">
 		<span>User ID:</span>
-		<input type="text" name="id" readonly="readonly" value="<?=$data[id]?>" />
+		<input type="text" name="id" readonly="readonly" value="<?=$user['id']?>" />
 		<span>User Name:</span>
-		<input type="text" name="username" value="<?=$data[id]?>" /><br />
+		<input type="text" name="username" value="<?=$user['username']?>" /><br />
 		<input type="submit" value="update"/>
 	</form>
 
 <?php } ?>
+
+
