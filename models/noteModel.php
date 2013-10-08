@@ -3,9 +3,10 @@
 class noteModel{
 	public function getNotes(){
 		$db=new PDO("mysql:hostname=localhost;dbname=ssl_note","root","root");
-		$st = $db->prepare("select * from notes");
+		$st = $db->prepare("select * from note");
 		$st->execute();
 		$obj = $st->fetchAll();
+				
 		return $obj;
 	}
 	
