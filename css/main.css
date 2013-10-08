@@ -1,0 +1,69 @@
+body {
+	margin: 0;
+}
+
+.note-nav {
+	float: left;
+	padding: 1.5%;
+	left: 0px;
+	background: aqua;
+	position: fixed;
+	width: 20%;
+	height: 100%;
+	float: left;
+}
+
+.main {
+	background: fuchsia;
+	float: right;
+	width: 75%;
+	padding: 1.5%;
+}
+
+header {
+	height: 40px;
+	width: 100%;
+	background: yellow;
+	line-height: 40px;
+	position: fixed;
+	z-index: 1000;
+	top: 0;
+}
+
+/* this is to push down the content behind the fixed header */
+#header_placeholder {
+	height: 40px;
+	width: 100%;
+	background: yellow;
+}
+
+.home-login {
+	float: right;
+}
+
+.note-list {
+	margin: 0 auto;
+	width: 55em;
+}
+.note-item {
+	margin-top: 30px;
+	clear: both;
+}
+.note {
+	background: green;
+	width: 50em;
+	padding: 10px;
+	float: left;
+	margin-right: 1em;
+	clear: both;
+}
+
+.add-note {
+	width: 100px;
+	display: block;
+	margin: 0 auto 30px;
+}
+
+.clear-fix {
+	clear: both;
+}

@@ -5,6 +5,8 @@
 ?>
 <!-- add in side div -->
 
+<h1>H1 in the App Body View</h1>
+
 <form action="?action=process" method="post">
 		<div>
 			<label for="firstName">First Name</label>
