@@ -1,5 +1,6 @@
 <?php
 foreach($data as $user){
+/*
 	echo ("<br>");
 	//Period is concatenating
 	echo ($user["username"]."<br>");
@@ -9,6 +10,7 @@ foreach($data as $user){
 	echo ("<a href='?action=delete'> delete</a>");
 	echo ("<a href='?action=updateform&id=".$user["id"]."'> update</a>");
 	echo ("<br><br>");
+*/
 }
 
 ?>
@@ -18,17 +20,17 @@ foreach($data as $user){
 <div class='main'>
 	<span class="add-note">Create a note</span>
 	<div class="note-list">
-		<?php for($i = 0; $i < 10; $i++):?>
+		<?php foreach($data as $note):?>
 		<div class="note-item">
 			<div class="note">
 				<div class="note-header">
-					<span class="note-title">NOTE TITLE</span>
+					<span class="note-title"><?php $note["title"] ?></span>
 					<span class="note-category">NOTE CATEGORY</span>
 				</div>
 				<!-- END HEADER DIV -->
 				<div class="note-body">
 					<p>
-						NOTE BODY HERE NOTE BODY HERE NOTE BODY HERE NOTE BODY HERE NOTE BODY HERE NOTE BODY HERE NOTE BODY HERE NOTE BODY HERE NOTE BODY HERE NOTE BODY HERE NOTE BODY HERE NOTE BODY HERE NOTE BODY HERE NOTE BODY HERE NOTE BODY HERE NOTE BODY HERE NOTE BODY HERE NOTE BODY HERE NOTE BODY HERE NOTE BODY HERE NOTE BODY HERE NOTE BODY HERE NOTE BODY HERE NOTE BODY HERE NOTE BODY HERE NOTE BODY HERE NOTE BODY HERE NOTE BODY HERE NOTE BODY HERE NOTE BODY HERE NOTE BODY HERE NOTE BODY HERE NOTE BODY HERE NOTE BODY HERE NOTE BODY HERE NOTE BODY HERE NOTE BODY HERE NOTE BODY HERE NOTE BODY HERE NOTE BODY HERE NOTE BODY HERE
+						NOTE BODY HERE NOTE BODY HERE NOTE BODY HERE NOTE BODY HERE NOTE BODY HERE NOTE BODY HERE NOTE BODY HERE NOTE BODY HERE NOTE BODY HERE NOTE BODY HERE NOTE BODY HERE NOTE BODY HERE NOTE BODY HERE NOTE BODY HERE NOTE BODY HERE NOTE BODY HERE NOTE BODY HERE NOTE BODY HERE NOTE BODY HERE NOTE BODY HERE NOTE BODY HERE NOTE BODY HERE NOTE BODY HERE NOTE BODY HERE NOTE BODY HERE NOTE BODY HERE NOTE BODY HERE NOTE BODY HERE NOTE BODY HERE NOTE BODY HERE NOTE BODY HERE NOTE BODY HERE NOTE BODY HERE NOTE BODY HERE NOTE BODY HERE NOTE BODY HERE NOTE BODY HERE NOTE BODY HERE NOTE BODY HERE NOTE BODY HERE NOTE BODY HERE.
 					</p>
 				</div>
 				<!-- END CONTROLS DIV -->
@@ -43,7 +45,7 @@ foreach($data as $user){
 			</div>
 		</div>
 		<!-- END NOTE ITEM DIV -->
-		<?php endfor; ?>
+		<?php endforeach; ?>
 	</div>
 	<!-- END NOTE LIST DIV -->
 </div>
