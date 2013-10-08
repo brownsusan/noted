@@ -38,6 +38,7 @@
 						<span class="note-edit">E</span><br>
 						<span class="note-delete">D</span>
 					</div><!-- END CONTROLS DIV -->
+					<div class="clear-fix"></div>
 				</div><!-- END NOTE ITEM DIV -->
 				
 				<?php endfor; ?>
