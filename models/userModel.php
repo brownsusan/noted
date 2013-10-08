@@ -17,7 +17,7 @@ class userModel{
 		//echo all variables (parameters)
 		
 		$sql = "update user set
-				username = :username,
+				username = :username
 				where
 				id = :id";
 		$statement = $db -> prepare($sql);
