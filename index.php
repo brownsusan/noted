@@ -28,6 +28,8 @@ if ($_GET['action'] == 'app') {
 
 }
 
+
+// this is temp from class
 // decide the what other page to load
 if ($_GET['action'] == 'form') {
 
