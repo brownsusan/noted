@@ -1,27 +1,29 @@
 <?php
 
-class userModel{
-	public function getUsers(){
+class noteModel{
+	public function getNotes(){
 		$db=new PDO("mysql:hostname=localhost;dbname=ssl_note","root","root");
-		$st = $db->prepare("select * from user");
+		$st = $db->prepare("select * from notes");
 		$st->execute();
 		$obj = $st->fetchAll();
 		return $obj;
 	}
 	
 /* 	CHANGE PARAMETERS TO MATCH THE TABLE */
-	public function updateUser($id = '', $username = ''){
+	public function updateNote($noteId = '', $title = '', $body = '', $category = ''){
 		$db = new PDO ("mysql:hostname=localhost;dbname=ssl_note","root","root");
 		
 		//var dump
 		//echo all variables (parameters)
 		
-		$sql = "update user set
-				username = :username
+		$sql = "update note set
+				title = :title,
+				body = :body,
+				category = :category
 				where
-				id = :id";
+				noteId = :noteId";
 		$statement = $db -> prepare($sql);
-		$statement -> execute(array(":id"=>$id, ":username" => $username));
+		$statement -> execute(array(":noteId"=>$noteId, ":title" => $title, ":body"=>$body, ":category" => $category));
 	}
 }
 

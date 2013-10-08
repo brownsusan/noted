@@ -1,11 +1,12 @@
 <?php
 
 require ('../models/viewModel.php');
-require ('../models/userModel.php');
+require ('../models/noteModel.php');
 
 // create the view model so we can use it to load views
 $viewModel = new viewModel();
 $userModel = new userModel();
+$noteModel = new noteModel();
 
 // create an object (assosiative array) to pass to the header view
 $data = array('name' => 'susie');
@@ -87,18 +88,19 @@ if ($_GET['action'] == 'form') {
 		print('Not a match');
 	}
 	//Here I would want to be getting the notes.
-} else if ($_GET['action']=="users"){
-	$data = $userModel -> getUsers();
+} else if ($_GET['action']=="notes"){
+	$data = $noteModel -> getNotes();
 	$viewModel->getView("../views/app/body.php", $data);
 	$viewModel->getView("../views/app/nav.php", $data);
 /* 	var_dump($data); */
 
 	
 } else if ($_GET['action']=="updateform"){
-	$data = $userModel -> getUsers($_GET["id"]);
+	$data = $noteModel -> getNotes($_GET["id"]);
 	$viewModel->getView("../views/form/updateUserForm.php", $data);
 } else if ($_GET['action']=="updateuser"){
-	$userModel -> updateUser($_POST['id'], $_POST['username']);
-	$data = $userModel->getUsers();
+	$noteModel -> updateUser($_POST['id'], $_POST['username']);
+	$data = $noteModel->getNotes();
 	$viewModel -> getView('../views/app/body.php', $data);
+	$viewModel -> getView('../views/app/nav.php', $data);
 }
