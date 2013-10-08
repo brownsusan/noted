@@ -1,21 +1,21 @@
 <?php
 
-require ('models/viewModel.php');
-require ('models/userModel.php');
+require ('../models/viewModel.php');
+require ('../models/userModel.php');
 
 // create the view model so we can use it to load views
 $viewModel = new viewModel();
 $userModel = new userModel();
 // create an object (assosiative array) to pass to the header view
 $data = array('name' => 'susie');
-$viewModel -> getView('views/template/header.php', $data);
+$viewModel -> getView('../views/template/header.php', $data);
 
 // if no action is given we obviously are at the root of the site
 // thus we should load the landing page
 if (empty($_GET['action'])) {
 
 	// load the landing view
-	$viewModel -> getView('views/landing/body.php', $data);
+	$viewModel -> getView('../views/landing/body.php', $data);
 	exit ;
 
 }
@@ -24,8 +24,8 @@ if (empty($_GET['action'])) {
 if ($_GET['action'] == 'app') {
 
 	// load the app view
-	$viewModel -> getView('views/app/nav.php', $data);
-	$viewModel -> getView('views/app/body.php', $data);
+	$viewModel -> getView('../views/app/nav.php', $data);
+	$viewModel -> getView('../views/app/body.php', $data);
 	exit;
 
 }
@@ -35,7 +35,7 @@ if ($_GET['action'] == 'app') {
 // decide the what other page to load
 if ($_GET['action'] == 'form') {
 
-	$viewModel -> getView('views/form/body.php', $data);
+	$viewModel -> getView('../views/form/body.php', $data);
 
 } else if ($_GET['action'] == 'process') {
 
@@ -85,7 +85,11 @@ if ($_GET['action'] == 'form') {
 	} else {
 		print('Not a match');
 	}
+	//Here I would want to be getting the notes.
 } else if ($_GET['action']=="users"){
 	$data = $userModel -> getUsers();
-	var_dump($data);
+	$viewModel->getView("../views/app/body.php", $data);
+/* 	var_dump($data); */
+
+	
 }

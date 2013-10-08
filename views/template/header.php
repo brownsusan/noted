@@ -13,7 +13,7 @@
 		// we must load the css from the root (/) because
 		//relative paths don't work with pretty urls and a shared header file'
 		?>
-		<link rel="stylesheet" href="/css/main.css">
+<!-- 		<link rel="stylesheet" href="/css/main.css"> -->
 	</head>
 	<body>
 		

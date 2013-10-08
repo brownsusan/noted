@@ -1,5 +1,16 @@
 <?php
-//dynamic content code
+foreach($data as $user){
+	echo ("<br>");
+	//Period is concatenating
+	echo ($user["username"]."<br>");
+	echo ($user["firstname"]."<br>");
+	echo ($user["lastname"]."<br>");
+	echo ($user["email"]."<br>");
+	echo ("<a href='?action=delete'> delete</a>");
+	echo ("<a href='?action=updateform&prid=".$user["id"]."'> update</a>");
+	echo ("<br><br>");
+}
+
 ?>
 <!-- add in side div -->
 
