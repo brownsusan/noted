@@ -5,6 +5,8 @@
 
 
 <h1>H1 in the App Body View</h1>
+
+
 <div class='main'>
 	<span class="add-note">Create a note</span>
 	<div class="note-list">
