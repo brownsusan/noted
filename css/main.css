@@ -9,7 +9,7 @@ body {
 	left: 0px;
 	background: #999;
 	position: fixed;
-	width: 20%;
+	min-width: 20%;
 	height: 100%;
 	float: left;
 }
@@ -17,8 +17,8 @@ body {
 .main {
 	background: #555;
 	float: right;
-	width: 75%;
-	padding: 1.5%;
+	width: 77%;
+/* 	padding: 1.5%; */
 }
 
 header {
