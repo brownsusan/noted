@@ -5,7 +5,6 @@ require ('../models/noteModel.php');
 
 // create the view model so we can use it to load views
 $viewModel = new viewModel();
-$userModel = new userModel();
 $noteModel = new noteModel();
 
 // create an object (assosiative array) to pass to the header view
