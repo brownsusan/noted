@@ -1,38 +1,40 @@
 <?php
-
 //dynamic content code
-
 ?>
 <!-- add in side div -->
 
-<h1>H1 in the App Body View</h1>
 
-<form action="?action=process" method="post">
-		<div>
-			<label for="firstName">First Name</label>
-			<input name="firstName" id="firstName" type="text" placeholder="ex: John">
+<h1>H1 in the App Body View</h1>
+<div class='main'>
+	<span class="add-note">Create a note</span>
+	<div class="note-list">
+		<?php for($i = 0; $i < 10; $i++):?>
+		<div class="note-item">
+			<div class="note">
+				<div class="note-header">
+					<span class="note-title">NOTE TITLE</span>
+					<span class="note-category">NOTE CATEGORY</span>
+				</div>
+				<!-- END HEADER DIV -->
+				<div class="note-body">
+					<p>
+						NOTE BODY HERE NOTE BODY HERE NOTE BODY HERE NOTE BODY HERE NOTE BODY HERE NOTE BODY HERE NOTE BODY HERE NOTE BODY HERE NOTE BODY HERE NOTE BODY HERE NOTE BODY HERE NOTE BODY HERE NOTE BODY HERE NOTE BODY HERE NOTE BODY HERE NOTE BODY HERE NOTE BODY HERE NOTE BODY HERE NOTE BODY HERE NOTE BODY HERE NOTE BODY HERE NOTE BODY HERE NOTE BODY HERE NOTE BODY HERE NOTE BODY HERE NOTE BODY HERE NOTE BODY HERE NOTE BODY HERE NOTE BODY HERE NOTE BODY HERE NOTE BODY HERE NOTE BODY HERE NOTE BODY HERE NOTE BODY HERE NOTE BODY HERE NOTE BODY HERE NOTE BODY HERE NOTE BODY HERE NOTE BODY HERE NOTE BODY HERE NOTE BODY HERE
+					</p>
+				</div>
+				<!-- END CONTROLS DIV -->
+			</div>
+			<!-- END NOTE DIV -->
+			<div class="note-controls">
+				<span class="note-edit">E</span><br>
+				<span class="note-delete">D</span>
+			</div>
+			<!-- END CONTROLS DIV -->
+			<div class="clear-fix">
+			</div>
 		</div>
-		<div>
-			<label for="lastName">Last Name</label>
-			<input name="lastName" id="lastName" type="text" placeholder="ex: Doe">
-		</div>
-		<div>
-			<label for="username">Username</label>
-			<input name="username" id="username" type="text" placeholder="ex: johndoe1234">
-		</div>
-		<div>
-			<label for="email">Email Address</label>
-			<input name="email" id="email" type="email" placeholder="ex: jdoe@domain.com">
-		</div>
-		<div>
-			<label for="password">Password</label>
-			<input type="password" name="password" id="password" type="text">
-		</div>
-		<div>
-			<label for="confirmPassword">Confirm Password</label>
-			<input type="password" name="confirmPassword" id="confirmPassword" type="text">
-		</div>
-		<button "sign_up" class="button-submit home-sign-up">
-			Sign Up
-		</button>
-</form>
+		<!-- END NOTE ITEM DIV -->
+		<?php endfor; ?>
+	</div>
+	<!-- END NOTE LIST DIV -->
+</div>
+<!-- END MAIN DIV -->
