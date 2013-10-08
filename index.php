@@ -1,6 +1,7 @@
 <?php
 
 require ('models/viewModel.php');
+require ('models/noteModel.php');
 
 // if no action is given we obviously are at the root of the site
 // thus we should load the landing page

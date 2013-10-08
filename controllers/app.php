@@ -2,18 +2,13 @@
 
 $viewModel = new viewModel();
 
-$data = array('name' => 'susie');
-$viewModel -> getView('views/template/header.php', $data);
+$user = array('name' => 'susie');
+$viewModel -> getView('views/template/header.php', $user);
 
 // this will eventually come from a database
-$data = array(
-	array('title' => 'Something', 'body' => 'Some shit'),
-	array('title' => 'Something2', 'body' => 'Some shit'),
-	array('title' => 'Something3', 'body' => 'Some shit'),
-	array('title' => 'Something4', 'body' => 'Some shit'),
-	array('title' => 'Something4', 'body' => 'Some shit'),
-	array('title' => 'Something5', 'body' => 'Some shit'),
-);
+$note_model = new noteModel();
+$notes = $note_model -> getNotes();
 
-$viewModel -> getView('views/app/body.php', $data);
-$viewModel -> getView('views/app/nav.php', $data);
+$viewModel -> getView('views/app/body.php', $notes);
+$viewModel -> getView('views/app/nav.php');
+$viewModel -> getView('views/template/footer.php');

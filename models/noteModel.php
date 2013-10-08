@@ -2,11 +2,24 @@
 
 class noteModel{
 	public function getNotes(){
-		$db=new PDO("mysql:hostname=localhost;dbname=ssl_note","root","root");
+		/*$db=new PDO("mysql:hostname=localhost;dbname=ssl_note","root","root");
 		$st = $db->prepare("select * from notes");
 		$st->execute();
 		$obj = $st->fetchAll();
-		return $obj;
+		//return $obj;*/
+		
+		// HACK
+		$notes = array(
+			array('title' => 'Something', 'body' => 'Some shit'),
+			array('title' => 'Something2', 'body' => 'Some shit'),
+			array('title' => 'Something3', 'body' => 'Some shit'),
+			array('title' => 'Something4', 'body' => 'Some shit'),
+			array('title' => 'Something4', 'body' => 'Some shit'),
+			array('title' => 'Something5', 'body' => 'Some shit'),
+		);
+		
+		return $notes;
+		
 	}
 	
 /* 	CHANGE PARAMETERS TO MATCH THE TABLE */
@@ -30,7 +43,7 @@ class noteModel{
 
 
 /*
-THIS IS THE WAY IT SHOULD BE DONE - GETTING AN ERROR ON ID VARIABLE (UND)
+THIS IS FOR GETTING ONE SPECIFIC THING FROM THE DB
 class userModel{
 	public function getUsers(){
 		$db=new PDO("mysql:hostname=localhost;dbname=ssl_note","root","root");
