@@ -9,7 +9,7 @@ body {
 
 #logo{
 	background: url('/img/logo.png') no-repeat;
-	display: block;
+	display: inline-block;
 	background-position: 0 0;
 	height: 40px;
 	width: 125px;
@@ -34,8 +34,8 @@ body {
 	min-width: 15%;
 	height: 100%;
 	float: left;
-	background: rgba(290, 290, 290, 0.7);
-	color: #666;
+	background: rgba(290, 290, 290, 0.4);
+	color: #222;
 	z-index: 1001;
 /* 	box-shadow: 0 0 .5em rgba(0, 0, 0, 0.6); */
 }
@@ -54,7 +54,7 @@ body {
 header {
 	height: 40px;
 	width: 100%;
-	background: rgba(290, 290, 290, 0.9);
+	background: rgba(290, 290, 290, 1);
 	line-height: 40px;
 	position: fixed;
 	z-index: 1000;
@@ -87,14 +87,14 @@ header {
 }
 
 .note {
-	background: rgba(290, 290, 290, 0.8);
+	background: rgba(290, 290, 290, 0.7);
 	color: #333;
 	width: 88%;
 	padding: 25px;
 	float: left;
 	margin-right: 1%;
 	clear: both;
-	border-radius: 5px;
+	border-radius: 2px;
 	box-shadow: 0 0 .5em rgba(0, 0, 0, 0.4);
 }
 

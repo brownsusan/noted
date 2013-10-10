@@ -3,6 +3,14 @@
 //dynamic content code
 
 ?>
+<div id="hero">
+	
+</div>
+
+
+
+
+
 <!-- add in side div -->
 <form action="?action=process" method="post">
 		<div>
