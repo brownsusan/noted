@@ -10,4 +10,4 @@ $note_model = new noteModel();
 //This variable stores what is returned from the getNote function ($obj)
 $note = $note_model -> updateNote($note_id, $title, $body, $category);
 //header does a redirect - changing the view back to notes
-header('Location: /?action=app');
+header('Location: /?action=notes');

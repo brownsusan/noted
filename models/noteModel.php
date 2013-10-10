@@ -5,7 +5,7 @@ class noteModel{
 		//Connect to database
 		$db=new PDO("mysql:hostname=localhost;dbname=ssl_note","root","root");
 		//Prepare a sql query for the database I just connected to - store it in a var
-		$st = $db->prepare("select * from note");
+		$st = $db->prepare("select * from note order by noteId desc");
 		//Execute the query
 		$st->execute();
 		//Fetch everything that was returned from the query - store it in a var
@@ -37,6 +37,21 @@ class noteModel{
 		$statement = $db -> prepare($sql);
 		//Execute the statement - passing all the values to the query that we received when the function is called
 		$statement -> execute(array(":noteId"=>$noteId, ":title" => $title, ":body"=>$body, ":category" => $category));
+	}
+	
+	public function createNote($title = '', $body = '', $category = ''){
+		//Connect to database
+		$db = new PDO ("mysql:hostname=localhost;dbname=ssl_note","root","root");
+		//Make a variable for the sql query
+		$sql = "insert into note(
+				title,
+				body,
+				category)
+				Values(:title, :body, :category)";
+		//Prepare the statement - store it in a variable
+		$statement = $db -> prepare($sql);
+		//Execute the statement - passing all the values to the query that we received when the function is called
+		$statement -> execute(array(":title" => $title, ":body"=>$body, ":category" => $category));
 	}
 }
 
