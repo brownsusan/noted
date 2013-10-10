@@ -1,7 +1,7 @@
 <?php
 
 //Needs valdation
-$note_id = $_POST['note_id'];
+$note_id = $_GET['note_id'];
 
 // this will eventually come from a database
 $note_model = new noteModel();

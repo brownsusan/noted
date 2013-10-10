@@ -1,5 +1,21 @@
 <?php
 class noteModel{
+
+	public function createNote($title = '', $body = '', $category = ''){
+		//Connect to database
+		$db = new PDO ("mysql:hostname=localhost;dbname=ssl_note","root","root");
+		//Make a variable for the sql query
+		$sql = "insert into note(
+				title,
+				body,
+				category)
+				Values(:title, :body, :category)";
+		//Prepare the statement - store it in a variable
+		$statement = $db -> prepare($sql);
+		//Execute the statement - passing all the values to the query that we received when the function is called
+		$statement -> execute(array(":title" => $title, ":body"=>$body, ":category" => $category));
+	}
+
 	//Function to get all Notes
 	public function getNotes(){
 		//Connect to database
@@ -39,19 +55,15 @@ class noteModel{
 		$statement -> execute(array(":noteId"=>$noteId, ":title" => $title, ":body"=>$body, ":category" => $category));
 	}
 	
-	public function createNote($title = '', $body = '', $category = ''){
+		public function deleteNote($id = ''){
 		//Connect to database
 		$db = new PDO ("mysql:hostname=localhost;dbname=ssl_note","root","root");
 		//Make a variable for the sql query
-		$sql = "insert into note(
-				title,
-				body,
-				category)
-				Values(:title, :body, :category)";
+		$sql = "delete from note where noteId = :noteId";
 		//Prepare the statement - store it in a variable
 		$statement = $db -> prepare($sql);
 		//Execute the statement - passing all the values to the query that we received when the function is called
-		$statement -> execute(array(":title" => $title, ":body"=>$body, ":category" => $category));
+		$statement -> execute(array(":noteId" => $id));
 	}
 }
 
