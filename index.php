@@ -10,28 +10,28 @@ if (empty($_GET['action'])) {
 	// load the landing view
 	// $viewModel -> getView('views/landing/body.php', $data);
 	require 'controllers/landing.php';
-	exit ;
 
 }
 
-// if the app is being loaded
-if ($_GET['action'] == 'app') {
-
-	// load the app view
-	// $viewModel -> getView('views/app/nav.php', $data);
-	// $viewModel -> getView('views/app/body.php', $data);
-	require 'controllers/app.php';
-} 
-
-
-else if ($_GET['action'] == 'note_edit'){
-	require 'controllers/note_edit.php';
+else {
+	//If the file does not exist with the action that was passed in from the url
+	if(!file_exists('controllers/'.$_GET['action'].'.php')){
+		//Load the error controller
+		require 'controllers/error_404.php';
+		//Then stop the file from proceeding
+		exit;
+	}
+	//Otherwise load the controller for the action that was passed in through the url.
+	//This action variable comes from the hrefs & form action attributes that are hard coded into the html
+	require 'controllers/'.$_GET['action'].'.php';
 }
 
+exit;
 
-else if ($_GET['action'] == 'action_note_update'){
-	require 'controllers/action_note_update.php';
-}
+
+
+
+
 
 /********** CLASS EXAMPLE **********/
 // this is temp from class
