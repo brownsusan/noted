@@ -85,7 +85,7 @@ header {
 	clear: both;
 }
 
-.note-edit, .note-delete, .add-note{
+.note-edit, .note-delete, .note-save, .add-note{
 	display: block;
 	padding: 5px;
 	background: black;
