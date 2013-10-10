@@ -12,7 +12,7 @@
 	</div>
 	<!-- END NOTE DIV -->
 	<div class="note-controls">
-		<span class="note-edit">E</span><br>
+		<a href="/?action=note_edit&note_id=<?php echo $data['noteId'];?>" class="note-edit">E</a><br>
 		<span class="note-delete">D</span>
 	</div>
 	<!-- END CONTROLS DIV -->

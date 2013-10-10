@@ -29,6 +29,14 @@
 			<label for="confirmPassword">Confirm Password</label>
 			<input type="password" name="confirmPassword" id="confirmPassword" type="text">
 		</div>
+		<div>
+			<input id="newsletter" name="newsletter" value="Sign me up for email updates." type="checkbox">
+			<label for="newsletter">Sign me up for email updates.</label>
+		</div>
+		<div>
+			<input id="terms" name="terms" value="I agree to the terms and conditions." type="checkbox">
+			<label for="terms">I agree to the terms and conditions.</label>
+		</div>
 		<button "sign_up" class="button-submit home-sign-up">
 			Sign Up
 		</button>

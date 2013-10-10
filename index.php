@@ -21,8 +21,16 @@ if ($_GET['action'] == 'app') {
 	// $viewModel -> getView('views/app/nav.php', $data);
 	// $viewModel -> getView('views/app/body.php', $data);
 	require 'controllers/app.php';
-	exit ;
+} 
 
+
+else if ($_GET['action'] == 'note_edit'){
+	require 'controllers/note_edit.php';
+}
+
+
+else if ($_GET['action'] == 'action_note_update'){
+	require 'controllers/action_note_update.php';
 }
 
 /********** CLASS EXAMPLE **********/
@@ -41,6 +49,8 @@ if ($_GET['action'] == 'form') {
 	$email = $_POST['email'];
 	$password = $_POST['password'];
 	$confirmPassword = $_POST['confirmPassword'];
+	$newsletter = $_POST['newsletter'];
+	$terms = $_POST['terms'];
 
 	if (preg_match('/^[a-zA-Z]+(([\'\,\.\-][a-zA-Z])?[a-zA-Z]*)*$/', $firstName)) {
 		print('Match');
@@ -61,6 +71,16 @@ if ($_GET['action'] == 'form') {
 		print('Match');
 	} else {
 		print('Not a match');
+	}
+	if ($newsletter){
+		print('Match');
+	}else{
+		print('Not a match.');
+	}
+	if ($terms){
+		print('Match');
+	}else{
+		print('Match');
 	}
 	/*
 	 Password matching expression.
@@ -91,7 +111,7 @@ if ($_GET['action'] == 'form') {
 	$data = $noteModel -> getNotes($_GET["id"]);
 	$viewModel -> getView("views/form/updateUserForm.php", $data);
 } else if ($_GET['action'] == "updateuser") {
-	$noteModel -> updateUser($_POST['id'], $_POST['username']);
+/* 	$noteModel -> updateUser($_POST['id'], $_POST['username']); */
 	$data = $noteModel -> getNotes();
 	$viewModel -> getView('views/app/body.php', $data);
 	$viewModel -> getView('views/app/nav.php', $data);
