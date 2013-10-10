@@ -20,7 +20,7 @@
 		<div id="header_placeholder"></div>
 		
 		<header>
-			<a href="#">PROJECT NAME</a>
+			<a id="logo" href="#">PROJECT NAME</a>
 			<div class="home-login">
 				<label for="loginEmail">Email Address</label>
 				<input id="loginEmail" placeholder="Enter Email Address"/>
