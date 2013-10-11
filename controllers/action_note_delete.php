@@ -8,4 +8,4 @@ $note_model = new noteModel();
 //This variable stores what is returned from the getNote function ($obj)
 $note = $note_model -> deleteNote($note_id);
 //header does a redirect - changing the view back to notes
-header('Location: /?action=notes');
+header('Location: /php/?action=notes');

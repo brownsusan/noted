@@ -12,7 +12,7 @@
 
 
 <!-- add in side div -->
-<form action="?action=process" method="post">
+<form action="/php/?action=process" method="post">
 		<div>
 			<label for="firstName">First Name</label>
 			<input name="firstName" id="firstName" type="text" placeholder="ex: John">

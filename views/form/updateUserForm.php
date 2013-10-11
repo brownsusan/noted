@@ -1,6 +1,6 @@
 <?php foreach($data as $user){ ?>
 
-	<form action="?action=updateuser" method="post">
+	<form action="/php/?action=updateuser" method="post">
 		<span>User ID:</span>
 		<input type="text" name="id" readonly="readonly" value="<?=$user['id']?>" />
 		<span>User Name:</span>

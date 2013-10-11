@@ -66,18 +66,3 @@ class noteModel{
 		$statement -> execute(array(":noteId" => $id));
 	}
 }
-
-
-
-/*
-THIS IS FOR GETTING ONE SPECIFIC THING FROM THE DB
-class userModel{
-	public function getUsers(){
-		$db=new PDO("mysql:hostname=localhost;dbname=ssl_note","root","root");
-		$sql = "select * from user where id = :id";
-		$st = $db->prepare($sql);
-		$st->execute(array(":id"=>$id));
-		return $st->fetchAll();
-	}
-}
-*/

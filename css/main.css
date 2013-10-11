@@ -1,7 +1,7 @@
 body {
 	margin: 0;
 	font-family: helvetica;
-	background: url('/img/bg-1.png') no-repeat;
+	background: url('/php/img/bg-1.png') no-repeat;
 	background-position: 0 30px;
 	background-attachment: fixed;
 	background-size: 100% 100%;
@@ -79,7 +79,7 @@ header {
 }
 
 #logo{
-	background: url('/img/logo.png') no-repeat;
+	background: url('/php/img/logo.png') no-repeat;
 	display: inline-block;
 	background-position: 0 0;
 	height: 40px;
@@ -106,16 +106,20 @@ header {
 	box-shadow: 0 0 .5em rgba(0, 0, 0, 0.4);
 }
 
-.note-item {
+.note-item, .update-note-item, .create-note-item {
 	margin: 30px 0;
 	clear: both;
 }
 
-.note-body, .note-header{
+.note-body, .create-note-body, .update-note-body, .note-header, .create-note-header, .update-note-header{
 	padding: 0 15px 15px;
 }
 
-.note-header{
+.note-body, .create-note-body, .update-note-body{
+	line-height: 1.5em;
+}
+
+.note-header, .create-note-header, .update-note-header{
 	border-bottom: 1px solid rgba(180, 180, 180, 0.8);
 }
 
@@ -123,6 +127,8 @@ header {
 	margin: 0 auto;
 	width: 75%;
 }
+
+
 
 
 /*------------- Note Controls ------------*/
@@ -150,17 +156,17 @@ header {
 }
 
 .note-edit{
-	background: rgba(290, 290, 290, 0.8) url('/img/pencil.png') no-repeat;
+	background: rgba(290, 290, 290, 0.8) url('/php/img/pencil.png') no-repeat;
 	background-position: 5px 5px ;
 }
 
 .note-delete{
-	background: rgba(290, 290, 290, 0.8) url('/img/trash.png') no-repeat;
+	background: rgba(290, 290, 290, 0.8) url('/php/img/trash.png') no-repeat;
 	background-position: 5px 5px ;
 }
 
 .note-save{
-	background: rgba(290, 290, 290, 0.8) url('/img/check.png') no-repeat;
+	background: rgba(290, 290, 290, 0.8) url('/php/img/check.png') no-repeat;
 }
 
 .note-controls{

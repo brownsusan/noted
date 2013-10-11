@@ -1,5 +1,5 @@
 <div class='main'>
-	<a href="/?action=note_create" class="add-note">Create a note</a>
+	<a href="/php/?action=note_create" class="add-note">Create a note</a>
 	<div class="note-list">
 		<?php 
 			//Instantiate viewModel

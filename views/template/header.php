@@ -13,14 +13,14 @@
 		// we must load the css from the root (/) because
 		//relative paths don't work with pretty urls and a shared header file'
 		?>
-		<link rel="stylesheet" href="/css/main.css">
+		<link rel="stylesheet" href="/php/css/main.css">
 	</head>
 	<body>
 		
 		<div id="header_placeholder"></div>
 		
 		<header>
-			<a id="logo" href="#">PROJECT NAME</a>
+			<a id="logo" href="/php/?action=notes">PROJECT NAME</a>
 			<div class="home-login">
 				<label for="loginEmail">Email Address</label>
 				<input id="loginEmail" placeholder="Enter Email Address"/>
