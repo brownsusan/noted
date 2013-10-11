@@ -20,7 +20,7 @@ class categoryModel{
 		//Connect to database
 		$db=new PDO("mysql:hostname=localhost;dbname=ssl_note","root","root");
 		//Prepare a sql query for the database I just connected to - store it in a var
-		$st = $db->prepare("select * from category order by categoryId desc");
+		$st = $db->prepare("select * from category order by categoryId");
 		//Execute the query
 		$st->execute();
 		//Fetch everything that was returned from the query - store it in a var

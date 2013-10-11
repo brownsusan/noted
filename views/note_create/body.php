@@ -13,7 +13,7 @@
 			</div>
 			<!-- END NOTE DIV -->
 			<div class="note-controls">
-				<input type="submit" class="note-save" value="S" /><br>
+				<input type="submit" class="note-save-btn" value="Save" /><br>
 			</div>
 			<!-- END CONTROLS DIV -->
 			<div class="clear-fix">

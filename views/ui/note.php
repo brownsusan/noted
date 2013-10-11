@@ -2,7 +2,7 @@
 	<div class="note">
 		<div class="note-header">
 			<span class="note-title"><?php echo $data['title']; ?></span>
-			<span class="note-category"><?php echo $data['category']; ?></span>
+			<span class="note-category"><?php echo $data['categoryId']; ?></span>
 		</div>
 		<!-- END HEADER DIV -->
 		<div class="note-body">
@@ -12,8 +12,8 @@
 	</div>
 	<!-- END NOTE DIV -->
 	<div class="note-controls">
-		<a href="/php/?action=note_update&note_id=<?php echo $data['noteId'];?>" class="note-edit">Edit</a><br>
-		<a href="/php/?action=action_note_delete&note_id=<?php echo $data['noteId'];?>" class="note-delete">Delete</a>
+		<a href="/php/?action=note_update&note_id=<?php echo $data['noteId'];?>" class="note-edit-btn">Edit</a><br>
+		<a href="/php/?action=action_note_delete&note_id=<?php echo $data['noteId'];?>" class="note-delete-btn">Delete</a>
 	</div>
 	<!-- END CONTROLS DIV -->
 	<div class="clear-fix">

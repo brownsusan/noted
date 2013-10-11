@@ -14,8 +14,8 @@
 			</div>
 			<!-- END NOTE DIV -->
 			<div class="note-controls">
-				<input type="submit" class="note-save" value="S" /><br>
-				<span class="note-delete">D</span>
+				<input type="submit" class="note-save-btn" value="Save" /><br>
+				<span class="note-delete-btn">Delete</span>
 			</div>
 			<!-- END CONTROLS DIV -->
 			<div class="clear-fix">

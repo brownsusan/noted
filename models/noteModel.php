@@ -1,19 +1,19 @@
 <?php
 class noteModel{
 
-	public function createNote($title = '', $body = '', $category = ''){
+	public function createNote($title = '', $body = '', $category_id = 1){
 		//Connect to database
 		$db = new PDO ("mysql:hostname=localhost;dbname=ssl_note","root","root");
 		//Make a variable for the sql query
 		$sql = "insert into note(
 				title,
 				body,
-				category)
-				Values(:title, :body, :category)";
+				categoryId)
+				Values(:title, :body, :categoryId)";
 		//Prepare the statement - store it in a variable
 		$statement = $db -> prepare($sql);
 		//Execute the statement - passing all the values to the query that we received when the function is called
-		$statement -> execute(array(":title" => $title, ":body"=>$body, ":category" => $category));
+		$statement -> execute(array(":title" => $title, ":body"=>$body, ":categoryId" => $category_id));
 	}
 
 	//Function to get all Notes
@@ -30,6 +30,19 @@ class noteModel{
 		return $obj;
 	}
 	
+	public function getNotesByCategory($category_id){
+		//Connect to database
+		$db=new PDO("mysql:hostname=localhost;dbname=ssl_note","root","root");
+		//Prepare a sql query for the database I just connected to - store it in a var
+		$st = $db->prepare("select * from note where categoryId=:categoryId order by noteId desc");
+		//Execute the query
+		$st->execute(array(":categoryId"=>$category_id));
+		//Fetch everything that was returned from the query - store it in a var
+		$obj = $st->fetchAll();
+		//Return the var
+		return $obj;
+	}
+	
 	public function getNote($note_id){
 		$db=new PDO("mysql:hostname=localhost;dbname=ssl_note","root","root");
 		$st = $db->prepare("select * from note where noteId=:noteId");
@@ -39,23 +52,23 @@ class noteModel{
 	}
 	
 	//Function to update a note
-	public function updateNote($noteId = '', $title = '', $body = '', $category = ''){
+	public function updateNote($noteId = '', $title = '', $body = '', $category_id = ''){
 		//Connect to database
 		$db = new PDO ("mysql:hostname=localhost;dbname=ssl_note","root","root");
 		//Make a variable for the sql query
 		$sql = "update note set
 				title = :title,
 				body = :body,
-				category = :category
+				categoryId = :categoryId
 				where
 				noteId = :noteId";
 		//Prepare the statement - store it in a variable
 		$statement = $db -> prepare($sql);
 		//Execute the statement - passing all the values to the query that we received when the function is called
-		$statement -> execute(array(":noteId"=>$noteId, ":title" => $title, ":body"=>$body, ":category" => $category));
+		$statement -> execute(array(":noteId"=>$noteId, ":title" => $title, ":body"=>$body, ":categoryId" => $category_id));
 	}
 	
-		public function deleteNote($id = ''){
+	public function deleteNote($id = ''){
 		//Connect to database
 		$db = new PDO ("mysql:hostname=localhost;dbname=ssl_note","root","root");
 		//Make a variable for the sql query
@@ -65,4 +78,8 @@ class noteModel{
 		//Execute the statement - passing all the values to the query that we received when the function is called
 		$statement -> execute(array(":noteId" => $id));
 	}
+	
+	
+	
+	
 }
