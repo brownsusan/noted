@@ -1,0 +1,1 @@
+<li>Title: <?php echo $data['title']; ?></li>
