@@ -1,6 +1,6 @@
 <div class="main">
 	<div class="create-note-item">
-		<form id="create-note-form" action="/php/?action=action_note_create" method="post">
+		<form id="create-note-form" action="<?php echo $GLOBALS['web_root']; ?>?action=action_note_create" method="post">
 			<div class="create-note">
 				<h1>Create a new note</h1>
 				<div class="create-note-header">

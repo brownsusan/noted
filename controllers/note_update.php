@@ -15,8 +15,22 @@ $note_model = new noteModel();
 //(id comes from the url which comes from the html - it is hard coded in with a get variable)
 $note = $note_model -> getNote($note_id);
 
+$category_model = new categoryModel();
+$categories = $category_model -> getCategories();
+
+$data = array(
+	'note' => $note,
+	'categories' => $categories
+);
+
+
+
+
+
+
+
 $viewModel -> getView('views/template/header.php', $user);
 //Getting the update view, and giving it the data for the note that was clicked 
-$viewModel -> getView('views/note_update/body.php', $note);
+$viewModel -> getView('views/note_update/body.php', $data);
 $viewModel -> getView('views/notes/nav.php');
 $viewModel -> getView('views/template/foot.php');

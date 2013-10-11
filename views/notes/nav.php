@@ -2,15 +2,17 @@
 //dynamic content code
 ?>
 <div class="note-nav">
-	<input type="text" id="search" placeholder="Search..."/>
+	<form action="<?php echo $GLOBALS['web_root']; ?>?action=action_category_create" method="post">
+		<input name="category" type="text" id="create_new_category" placeholder="Enter a new category name..."/>
+		<input type="submit" href="#" id="new_category_btn" value="Create Category" />
+	</form>
 	<ul class="categories">
 	
-		<a href="#" id="new_category_btn">Add new category</a>
+<!-- 		<a href="#" id="new_category_btn">Add new category</a> -->
 		
 		<!-- for each loop like in notes -->
 		<?php 
 			$viewModel = new viewModel();
-			//Instantiate viewModel
 			$note_model = new noteModel();
 			$category_model = new categoryModel();
 			
