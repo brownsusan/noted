@@ -20,7 +20,7 @@
 		<div id="header_placeholder"></div>
 		
 		<header>
-			<a id="logo" href="/php/?action=notes">PROJECT NAME</a>
+			<a id="logo" href="<?php echo $GLOBALS['web_root']; ?>?action=notes">PROJECT NAME</a>
 			<div class="home-login">
 				<label for="loginEmail">Email Address</label>
 				<input id="loginEmail" placeholder="Enter Email Address"/>
