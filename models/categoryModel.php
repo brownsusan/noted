@@ -1,5 +1,5 @@
 <?php
-class noteModel{
+class categoryModel{
 
 	public function createCategory($title = ''){
 		//Connect to database
@@ -41,7 +41,7 @@ class noteModel{
 		//Connect to database
 		$db = new PDO ("mysql:hostname=localhost;dbname=ssl_note","root","root");
 		//Make a variable for the sql query
-		$sql = "delete from note where noteId = :noteId";
+		$sql = "delete from category where categoryId = :categoryId";
 		//Prepare the statement - store it in a variable
 		$statement = $db -> prepare($sql);
 		//Execute the statement - passing all the values to the query that we received when the function is called

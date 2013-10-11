@@ -24,10 +24,10 @@ body {
 /*---------------- Navigation --------------*/
 .note-nav {
 	float: left;
-	padding: 1.5%;
+	padding: 1%;
 	left: 0px;
 	position: fixed;
-	min-width: 15%;
+	max-width: 17%;
 	height: 100%;
 	float: left;
 	background: rgba(290, 290, 290, 0.4);
@@ -39,6 +39,23 @@ body {
 .note-nav ul{
 	list-style-type: none;
 	padding: 20px;
+}
+
+
+.nav-category-title, .nav-note-title{
+	display: block;
+	width: 100%;
+	margin: 10px 0;
+}
+
+.nav-category-title{
+	color: black;
+	margin-top: 20px;
+}
+
+.nav-note-title{
+	font-weight: lighter;
+	padding-left: 5%;
 }
 
 #search{
@@ -118,6 +135,7 @@ header {
 
 .note-body, .create-note-body, .update-note-body{
 	line-height: 1.5em;
+	font-weight: lighter;
 }
 
 .note-header, .create-note-header, .update-note-header{

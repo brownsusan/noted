@@ -1,1 +1,1 @@
-<li>Title: <?php echo $data['title']; ?></li>
+<li class="nav-category-title">Title: <?php echo $data['title']; ?></li>

@@ -5,14 +5,12 @@ $viewModel = new viewModel();
 $user = array('name' => 'susie');
 
 
-$category_model = new categoryModel();
-// this function gets all the notes from a database
-$categories = $category_model -> getCategories();
-
-
 $note_model = new noteModel();
 // this function gets all the notes from a database
 $notes = $note_model -> getNotes();
+
+$category_model = new categoryModel();
+$categories = $category_model -> getCategories();
 
 $viewModel -> getView('views/template/header.php', $user);
 $viewModel -> getView('views/notes/body.php', $notes);
