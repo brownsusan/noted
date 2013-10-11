@@ -1,5 +1,5 @@
 <div class='main'>
-	<a href="/php/?action=note_create" class="add-note-btn">Create a note</a>
+	<a href="<?php echo $GLOBALS['web_root']; ?>?action=note_create" class="add-note-btn">Create a note</a>
 	<div class="note-list">
 		<?php 
 			//Instantiate viewModel
