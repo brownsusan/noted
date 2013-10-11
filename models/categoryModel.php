@@ -8,11 +8,11 @@ class categoryModel{
 		$sql = "insert into category(
 				title
 				)
-				Values(:title, :body, :category)";
+				Values(:title)";
 		//Prepare the statement - store it in a variable
 		$statement = $db -> prepare($sql);
 		//Execute the statement - passing all the values to the query that we received when the function is called
-		$statement -> execute(array(":title" => $title, ":body"=>$body, ":category" => $category));
+		$statement -> execute(array(":title" => $title));
 	}
 
 	//Function to get all Notes
