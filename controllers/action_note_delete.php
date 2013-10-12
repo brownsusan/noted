@@ -1,5 +1,5 @@
 <?php
-
+protector::protect();
 //Needs valdation
 $note_id = $_GET['note_id'];
 

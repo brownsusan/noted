@@ -1,5 +1,5 @@
 <?php
-
+protector::protect();
 
 //Needs valdation
 $title = $_POST['category'];

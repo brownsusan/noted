@@ -1,4 +1,5 @@
 <?php
+protector::protect();
 //Needs valdation
 $note_id = $_POST['note_id'];
 $title = $_POST['title'];

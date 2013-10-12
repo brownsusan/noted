@@ -1,4 +1,5 @@
 <?php
+protector::protect();
 
 $viewModel = new viewModel();
 
@@ -29,7 +30,7 @@ $data = array(
 
 
 
-$viewModel -> getView('views/template/header.php', $user);
+$viewModel -> getView('views/template/app-header.php', $user);
 //Getting the update view, and giving it the data for the note that was clicked 
 $viewModel -> getView('views/note_update/body.php', $data);
 $viewModel -> getView('views/notes/nav.php');

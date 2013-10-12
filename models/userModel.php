@@ -1,25 +1,17 @@
 <?php
 class userModel{
 	//un and pass will come from the form
-	public function checkUser($data){
-		session_start();
-		
+	public function checkUser($email, $password){
+				
 		$db = new PDO("mysql:hostname=localhost;dbname=ssl_note","root","root");
-		$sql = "select username, password 
+		$sql = "select * 
 				from user
-				where username=:username and password=:password";
+				where email=:email and password=:password";
 		$st = $db->prepare($sql);
-		$st -> execute(array(":username"=>$data[username], ":password"=>$data[password]));
-		$val = $st -> fetchAll();
-		$isgood = $st->rowCount();
+		$st -> execute(array(":email"=>$email, ":password"=>$password));
+		$row = $st -> fetch();
 		
-		if($isgood > 0){
-			$_SESSION["loggedin"] = 1;
-			return 1;
-		}else{
-			$_SESSION["loggedin"] = 0;
-			return 0;
-		}
+		return $row;
 	}
 
 }

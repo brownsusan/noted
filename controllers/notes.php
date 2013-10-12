@@ -1,4 +1,5 @@
 <?php
+protector::protect();
 
 $viewModel = new viewModel();
 
@@ -12,7 +13,7 @@ $notes = $note_model -> getNotes();
 $category_model = new categoryModel();
 $categories = $category_model -> getCategories();
 
-$viewModel -> getView('views/template/header.php', $user);
+$viewModel -> getView('views/template/app-header.php', $user);
 $viewModel -> getView('views/notes/body.php', $notes);
 $viewModel -> getView('views/notes/nav.php', $categories);
 $viewModel -> getView('views/template/foot.php');

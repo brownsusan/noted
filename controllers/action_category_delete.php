@@ -1,4 +1,5 @@
 <?php
+protector::protect();
 //Comes from the url (which comes from the html)
 //Needs valdation
 $category_id = $_GET['category_id'];
