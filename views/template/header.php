@@ -21,10 +21,11 @@
 		
 		<header>
 			<a id="logo" href="<?php echo $GLOBALS['web_root']; ?>?action=notes">PROJECT NAME</a>
-			<div class="home-login">
-				<label for="loginEmail">Email Address</label>
-				<input id="loginEmail" placeholder="Enter Email Address"/>
-				<label for="loginPass">Password</label>
-				<input id="loginPass" placeholder="Password Here"/>
-			</div>
-		</header>
+			<!-- Add one more attribute from slides -->
+		<form action="/php/models/checklogin.php" method="post" class="home-login" name="home-login">
+			<label for="loginEmail">Email Address</label>
+			<input name="loginEmail" id="loginEmail" placeholder="Enter Email Address"/>
+			<label for="loginPass">Password</label>
+			<input name="loginPass" id="loginPass" placeholder="Password Here"/>
+			<input type="submit" value="log in" />
+		</form>

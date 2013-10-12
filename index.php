@@ -3,8 +3,12 @@
 require ('models/viewModel.php');
 require ('models/noteModel.php');
 require ('models/categoryModel.php');
+require ('models/ckUser.php');
+require ('models/checklogin.php');
 
 $GLOBALS['web_root'] = '/php/';
+
+session_start();
 
 
 // if no action is given we obviously are at the root of the site
