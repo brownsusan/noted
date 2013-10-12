@@ -37,7 +37,7 @@ class categoryModel{
 		return $obj;
 	}
 	
-		public function deleteCategory($id = ''){
+	public function deleteCategory($category_id = ''){
 		//Connect to database
 		$db = new PDO ("mysql:hostname=localhost;dbname=ssl_note","root","root");
 		//Make a variable for the sql query
@@ -45,6 +45,6 @@ class categoryModel{
 		//Prepare the statement - store it in a variable
 		$statement = $db -> prepare($sql);
 		//Execute the statement - passing all the values to the query that we received when the function is called
-		$statement -> execute(array(":noteId" => $id));
+		$statement -> execute(array(":categoryId" => $category_id));
 	}
 }

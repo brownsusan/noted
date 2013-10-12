@@ -74,6 +74,7 @@ header {
 	background: rgba(290, 290, 290, 0.4);
 	color: #222;
 	z-index: 1001;
+	overflow: scroll;
 /* 	box-shadow: 0 0 .5em rgba(0, 0, 0, 0.6); */
 }
 

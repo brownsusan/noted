@@ -68,6 +68,20 @@ class noteModel{
 		$statement -> execute(array(":noteId"=>$noteId, ":title" => $title, ":body"=>$body, ":categoryId" => $category_id));
 	}
 	
+	public function updateNoteCategory($category_old, $category_new = 1){
+		//Connect to database
+		$db = new PDO ("mysql:hostname=localhost;dbname=ssl_note","root","root");
+		//Make a variable for the sql query
+		$sql = "update note set
+				categoryId = :categoryIdNew
+				where
+				categoryId = :categoryIdOld";
+		//Prepare the statement - store it in a variable
+		$statement = $db -> prepare($sql);
+		//Execute the statement - passing all the values to the query that we received when the function is called
+		$statement -> execute(array(":categoryIdNew"=>$category_new, ":categoryIdOld" => $category_old));
+	}
+	
 	public function deleteNote($id = ''){
 		//Connect to database
 		$db = new PDO ("mysql:hostname=localhost;dbname=ssl_note","root","root");
