@@ -23,5 +23,5 @@ class checklogin{
 
 session_start();
 echo("session started");
-$check = new checklogin($_POST["username"], $_POST["password"]);
+$check = new checklogin($_POST["username"], md5($_POST["password"]));
 var_dump($_SESSION);

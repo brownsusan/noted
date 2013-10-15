@@ -26,7 +26,7 @@
 			<label for="loginEmail">Email Address</label>
 			<input name="email" id="loginEmail" placeholder="Enter Email Address"/>
 			<label for="loginPass">Password</label>
-			<input name="password" id="loginPass" placeholder="Password Here"/>
+			<input name="password" type="password" id="loginPass" placeholder="Password Here"/>
 			<input type="submit" value="log in" />
 		</form>
 		</header>

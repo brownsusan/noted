@@ -2,6 +2,7 @@
 
 session_start();
 
+
 $GLOBALS['web_root'] = '/php/';
 
 require ('libs/protector.php');
@@ -48,7 +49,7 @@ if ($_GET['action'] == 'form') {
 
 	$viewModel -> getView('views/form/body.php', $data);
 
-} else if ($_GET['action'] == 'process') {
+} else if ($_GET['action'] == 'signup') {
 
 	//var_dump($_POST);
 	$firstName = $_POST['firstName'];

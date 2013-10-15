@@ -12,7 +12,7 @@
 
 
 <!-- add in side div -->
-<form action="<?php echo $GLOBALS['web_root']; ?>?action=process" method="post">
+<form action="<?php echo $GLOBALS['web_root']; ?>?action=signup" method="post">
 		<div>
 			<label for="firstName">First Name</label>
 			<input name="firstName" id="firstName" type="text" placeholder="ex: John">
@@ -48,4 +48,5 @@
 		<button "sign_up" class="button-submit home-sign-up">
 			Sign Up
 		</button>
+		
 </form>

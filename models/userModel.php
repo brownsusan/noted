@@ -13,5 +13,21 @@ class userModel{
 		
 		return $row;
 	}
+	
+	public function createUser($username, $email, $password, $firstname, $lastname){
+		$db = new PDO ("mysql:hostname=localhost;dbname=ssl_note","root","root");
+		//Make a variable for the sql query
+		$sql = "insert into user(
+				username,
+				email,
+				password,
+				firstname,
+				lastname)
+				values(:username, :email, :password, :firstname, :lastname)";
+		//Prepare the statement - store it in a variable
+		$statement = $db -> prepare($sql);
+		//Execute the statement - passing all the values to the query that we received when the function is called
+		$statement -> execute(array(":username" => $username, ":email" => $email, ":password" => md5($password), ":firstname" => $firstname, ":lastname" => $lastname ));
+	}
 
 }
