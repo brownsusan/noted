@@ -58,7 +58,6 @@ if ($_GET['action'] == 'form') {
 	$email = $_POST['email'];
 	$password = $_POST['password'];
 	$confirmPassword = $_POST['confirmPassword'];
-	$newsletter = $_POST['newsletter'];
 	$terms = $_POST['terms'];
 
 	if (preg_match('/^[a-zA-Z]+(([\'\,\.\-][a-zA-Z])?[a-zA-Z]*)*$/', $firstName)) {
@@ -80,11 +79,6 @@ if ($_GET['action'] == 'form') {
 		print('Match');
 	} else {
 		print('Not a match');
-	}
-	if ($newsletter){
-		print('Match');
-	}else{
-		print('Not a match.');
 	}
 	if ($terms){
 		print('Match');
