@@ -1,7 +1,7 @@
 <?php
 //Needs valdation
 $email = $_POST['email'];
-$password = $_POST['password'];
+$password = md5($_POST['password']);
 
 $user_model = new userModel();
 $user = $user_model -> checkUser($email, $password);

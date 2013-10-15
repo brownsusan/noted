@@ -1,3 +1,6 @@
+<?php
+var_dump($_SESSION['user']);
+?>
 <form action="<?php echo $GLOBALS['web_root']; ?>?action=action_user_delete" method="post">
 		<div>
 			<span>First Name: </span>
@@ -19,8 +22,8 @@
 			<span>Password: </span>
 			<span>Click edit to change your password.</span>
 		</div>
-		<button "sign_up" class="button-submit home-sign-up">
-			Sign Up
+		<button class="button-submit home-sign-up">
+			Edit
 		</button>
 		
 </form>
