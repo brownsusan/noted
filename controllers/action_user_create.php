@@ -9,3 +9,9 @@ $lastname = $_POST['lastname'];
 
 $user_model = new userModel();
 $user = $user_model -> createUser($username, $email, $password, $firstname, $lastname);
+
+if($user){
+
+}else{
+	
+}

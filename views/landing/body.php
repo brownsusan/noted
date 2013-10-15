@@ -12,14 +12,14 @@
 
 
 <!-- add in side div -->
-<form action="<?php echo $GLOBALS['web_root']; ?>?action=signup" method="post">
+<form action="<?php echo $GLOBALS['web_root']; ?>?action=action_user_create" method="post">
 		<div>
-			<label for="firstName">First Name</label>
-			<input name="firstName" id="firstName" type="text" placeholder="ex: John">
+			<label for="firstname">First Name</label>
+			<input name="firstname" id="firstName" type="text" placeholder="ex: John">
 		</div>
 		<div>
-			<label for="lastName">Last Name</label>
-			<input name="lastName" id="lastName" type="text" placeholder="ex: Doe">
+			<label for="lastname">Last Name</label>
+			<input name="lastname" id="lastName" type="text" placeholder="ex: Doe">
 		</div>
 		<div>
 			<label for="username">Username</label>

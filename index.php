@@ -49,7 +49,7 @@ if ($_GET['action'] == 'form') {
 
 	$viewModel -> getView('views/form/body.php', $data);
 
-} else if ($_GET['action'] == 'signup') {
+} else if ($_GET['action'] == 'action_user_create') {
 
 	//var_dump($_POST);
 	$firstName = $_POST['firstName'];
