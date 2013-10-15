@@ -21,6 +21,7 @@ class noteModel{
 		//Connect to database
 		$db=new PDO("mysql:hostname=localhost;dbname=ssl_note","root","root");
 		//Prepare a sql query for the database I just connected to - store it in a var
+		//where userId=:useryId - will need a userId parameter passed in
 		$st = $db->prepare("select * from note order by noteId desc");
 		//Execute the query
 		$st->execute();
