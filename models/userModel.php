@@ -8,7 +8,7 @@ class userModel{
 				from user
 				where email=:email and password=:password";
 		$st = $db->prepare($sql);
-		$st -> execute(array(":email"=>$email, ":password"=>$password));
+		$st -> execute(array(":email"=>$email, ":password"=>md5($password)));
 		$row = $st -> fetch();
 		
 		return $row;
