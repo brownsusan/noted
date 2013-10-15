@@ -28,7 +28,14 @@ class userModel{
 		$statement = $db -> prepare($sql);
 		//Execute the statement - passing all the values to the query that we received when the function is called
 		$obj = $statement -> execute(array(":username" => $username, ":email" => $email, ":password" => md5($password), ":firstname" => $firstname, ":lastname" => $lastname ));
-		return $obj;
+		
+		$user['id'] = $db -> lastInsertId();
+		$user['username'] = $username;
+		$user['email'] = $username;
+		$user['firstname'] = $firstname;
+		$user['lastname'] = $lastname;
+		
+		return $user;
 	}
 	
 	public function updateUser($id = '', $username = '', $email = '', $password = '', $firstname = '', $lastname = ''){
