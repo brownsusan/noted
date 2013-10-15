@@ -10,10 +10,9 @@ $lastname = $_POST['lastname'];
 $user_model = new userModel();
 $user = $user_model -> createUser($username, $email, $password, $firstname, $lastname);
 
-var_dump($user);
-
 if($user){
 	$_SESSION['user'] = $user;
-}else{
 	header('Location: '.$GLOBALS['web_root'].'?action=notes');
+}else{
+	header('Location: '.$GLOBALS['web_root']);
 }

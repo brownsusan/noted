@@ -29,7 +29,7 @@ class userModel{
 		//Execute the statement - passing all the values to the query that we received when the function is called
 		$obj = $statement -> execute(array(":username" => $username, ":email" => $email, ":password" => md5($password), ":firstname" => $firstname, ":lastname" => $lastname ));
 		
-		$user['id'] = $db -> lastInsertId();
+		$user['userId'] = $db -> lastInsertId();
 		$user['username'] = $username;
 		$user['email'] = $username;
 		$user['firstname'] = $firstname;
