@@ -17,11 +17,7 @@
 		</div>
 		<div>
 			<span>Password: </span>
-			<span>First Name: </span>
-		</div>
-		<div>
-			<span>Confirm Password: </span>
-			<span>First Name: </span>
+			<span>Click edit to change your password.</span>
 		</div>
 		<button "sign_up" class="button-submit home-sign-up">
 			Sign Up
