@@ -9,5 +9,5 @@ $firstname = $_POST['firstname'];
 $lastname = $_POST['lastname'];
 
 $user_model = new userModel();
-$user = $user_model -> updateUser($title, $body, $category);
-/* header('Location: '.$GLOBALS['web_root'].'?action=notes'); */
+$user = $user_model -> updateUser($user_id, $username, $email, $password, $firstname, $lastname);
+header('Location: '.$GLOBALS['web_root'].'?action=account');

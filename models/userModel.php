@@ -8,7 +8,7 @@ class userModel{
 				from user
 				where email=:email and password=:password";
 		$st = $db->prepare($sql);
-		$st -> execute(array(":email"=>$email, ":password"=>md5($password)));
+		$st -> execute(array(":email"=>$email, ":password"=>$password));
 		$row = $st -> fetch();
 		
 		return $row;
@@ -43,7 +43,7 @@ class userModel{
 				where
 				id = :id";
 		$statement = $db -> prepare($sql);
-		$statement -> execute(array(":id"=>$id, ":username" => $username, ":email" => $email, ":password" => md5($password), ":firsname" => $firstname, ":lastname" => $lastname));
+		$statement -> execute(array(":id"=>$id, ":username" => $username, ":email" => $email, ":password" => $password, ":firsname" => $firstname, ":lastname" => $lastname));
 	}
 
 }

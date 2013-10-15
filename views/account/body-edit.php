@@ -23,7 +23,7 @@
 			<label for="confirmPassword">Confirm Password</label>
 			<input type="password" name="confirmPassword" id="confirmPassword" type="text">
 		</div>
-		<button "sign_up" class="button-submit home-sign-up">
+		<button class="button-submit home-sign-up">
 			Sign Up
 		</button>
 		

@@ -1,6 +1,6 @@
 <?php
 
-protector::protect();
+/* protector::protect(); */
 
 // create the view model so we can use it to load views
 $viewModel = new viewModel();
