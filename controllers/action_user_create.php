@@ -11,7 +11,7 @@ $user_model = new userModel();
 $user = $user_model -> createUser($username, $email, $password, $firstname, $lastname);
 
 if($user){
-	
+	$_SESSION['user'] = $user;
 }else{
 	header('Location: '.$GLOBALS['web_root'].'?action=notes');
 }

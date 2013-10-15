@@ -8,7 +8,7 @@ class userModel{
 				from user
 				where email=:email and password=:password";
 		$st = $db->prepare($sql);
-		$st -> execute(array(":email"=>$email, ":password"=>$password));
+		$st -> execute(array(":email"=>$email, ":password"=>md5($password)));
 		$row = $st -> fetch();
 		
 		return $row;
@@ -29,6 +29,21 @@ class userModel{
 		//Execute the statement - passing all the values to the query that we received when the function is called
 		$obj = $statement -> execute(array(":username" => $username, ":email" => $email, ":password" => md5($password), ":firstname" => $firstname, ":lastname" => $lastname ));
 		return $obj;
+	}
+	
+	public function updateUser($id = '', $username = '', $email = '', $password = '', $firstname = '', $lastname = ''){
+		$db = new PDO ("mysql:hostname=localhost;dbname=ssl_note","root","root");
+
+		$sql = "update user set
+				username = :username,
+				email = :email,
+				password = :password,
+				firstname = :firstname,
+				lastname = :lastname
+				where
+				id = :id";
+		$statement = $db -> prepare($sql);
+		$statement -> execute(array(":id"=>$id, ":username" => $username, ":email" => $email, ":password" => md5($password), ":firsname" => $firstname, ":lastname" => $lastname));
 	}
 
 }
