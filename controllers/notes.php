@@ -3,15 +3,16 @@ protector::protect();
 
 $viewModel = new viewModel();
 
-$user = array('name' => 'susie');
+$user = $_SESSION['user'];
+$userId = $_SESSION['user']['userId'];
 
 
 $note_model = new noteModel();
 // this function gets all the notes from a database
-$notes = $note_model -> getNotes();
+$notes = $note_model -> getNotes($userId);
 
 $category_model = new categoryModel();
-$categories = $category_model -> getCategories();
+$categories = $category_model -> getCategories($userId);
 
 $viewModel -> getView('views/template/app-header.php', $user);
 $viewModel -> getView('views/notes/body.php', $notes);
