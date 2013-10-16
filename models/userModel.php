@@ -28,12 +28,25 @@ class userModel{
 		$statement = $db -> prepare($sql);
 		//Execute the statement - passing all the values to the query that we received when the function is called
 		$obj = $statement -> execute(array(":username" => $username, ":email" => $email, ":password" => md5($password), ":firstname" => $firstname, ":lastname" => $lastname ));
-		
+
 		$user['userId'] = $db -> lastInsertId();
 		$user['username'] = $username;
 		$user['email'] = $username;
 		$user['firstname'] = $firstname;
 		$user['lastname'] = $lastname;
+		
+		
+		
+		$sql = "insert into category(
+				categoryUserId,
+				title
+				)
+				Values(:categoryUserId, :title)";
+		//Prepare the statement - store it in a variable
+		$statement = $db -> prepare($sql);
+		//Execute the statement - passing all the values to the query that we received when the function is called
+		$obj = $statement -> execute(array(":categoryUserId" => $user['userId'], ":title" => "Notes"));
+		
 		
 		return $user;
 	}
