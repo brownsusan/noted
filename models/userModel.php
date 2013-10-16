@@ -31,7 +31,8 @@ class userModel{
 
 		$user['userId'] = $db -> lastInsertId();
 		$user['username'] = $username;
-		$user['email'] = $username;
+		$user['password'] = $password;
+		$user['email'] = $email;
 		$user['firstname'] = $firstname;
 		$user['lastname'] = $lastname;
 		
@@ -61,9 +62,19 @@ class userModel{
 				firstname = :firstname,
 				lastname = :lastname
 				where
-				id = :id";
+				userId = :userId";
 		$statement = $db -> prepare($sql);
-		$statement -> execute(array(":id"=>$id, ":username" => $username, ":email" => $email, ":password" => $password, ":firsname" => $firstname, ":lastname" => $lastname));
+	
+		$statement -> execute(array(":userId"=>$id, ":username" => $username, ":email" => $email, ":password" => md5($password), ":firstname" => $firstname, ":lastname" => $lastname));
+				
+		$user['userId'] = $id;
+		$user['username'] = $username;
+		$user['password'] = $password;
+		$user['email'] = $email;
+		$user['firstname'] = $firstname;
+		$user['lastname'] = $lastname;
+		
+		return $user;
 	}
 
 }
