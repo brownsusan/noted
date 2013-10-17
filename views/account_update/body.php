@@ -27,7 +27,8 @@
 				<input type="password" name="confirmPassword" id="confirmPassword" type="text" placeholder="Confirm your password.">
 			</div>
 		</div>
-		<img src="<?php echo $GLOBALS['web_root']; ?>libs/CaptchaSecurityImages.php" alt="" />
+		<img src="<?php echo $GLOBALS['web_root']; ?>?action=captcha&width=180&height=60&characters=6" alt="Captcha Security Image" /><br>
+		<input type="text" name="security_code" id="security_code" placeholder="Enter the captcha text here."/><br>
 		<button class="button-submit home-sign-up">
 			Save
 		</button>

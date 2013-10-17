@@ -5,6 +5,7 @@ session_start();
 
 $GLOBALS['web_root'] = '/php/';
 
+require ('libs/CaptchaSecurityImages.php');
 require ('libs/protector.php');
 require ('libs/viewModel.php');
 

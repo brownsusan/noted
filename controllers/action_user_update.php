@@ -6,6 +6,13 @@ if(empty($_POST['password'])){
 	exit;
 }
 
+if(($_SESSION['security_code'] == $_POST['security_code']) && (!empty($_SESSION['security_code'])) ) {  
+	/* unset($_SESSION['security_code']); */ 
+} else { 
+	header('Location: '.$GLOBALS['web_root'].'?action=account_update');
+	exit;
+}
+
 //Needs valdation
 $user_id = $_SESSION['user']['userId'];
 $username = $_POST['username'];
