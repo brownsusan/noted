@@ -28,12 +28,26 @@ class userModel{
 		$statement = $db -> prepare($sql);
 		//Execute the statement - passing all the values to the query that we received when the function is called
 		$obj = $statement -> execute(array(":username" => $username, ":email" => $email, ":password" => md5($password), ":firstname" => $firstname, ":lastname" => $lastname ));
-		
+
 		$user['userId'] = $db -> lastInsertId();
 		$user['username'] = $username;
-		$user['email'] = $username;
+		$user['password'] = $password;
+		$user['email'] = $email;
 		$user['firstname'] = $firstname;
 		$user['lastname'] = $lastname;
+		
+		
+		
+		$sql = "insert into category(
+				categoryUserId,
+				title
+				)
+				Values(:categoryUserId, :title)";
+		//Prepare the statement - store it in a variable
+		$statement = $db -> prepare($sql);
+		//Execute the statement - passing all the values to the query that we received when the function is called
+		$obj = $statement -> execute(array(":categoryUserId" => $user['userId'], ":title" => "Notes"));
+		
 		
 		return $user;
 	}
@@ -48,9 +62,19 @@ class userModel{
 				firstname = :firstname,
 				lastname = :lastname
 				where
-				id = :id";
+				userId = :userId";
 		$statement = $db -> prepare($sql);
-		$statement -> execute(array(":id"=>$id, ":username" => $username, ":email" => $email, ":password" => $password, ":firsname" => $firstname, ":lastname" => $lastname));
+	
+		$statement -> execute(array(":userId"=>$id, ":username" => $username, ":email" => $email, ":password" => md5($password), ":firstname" => $firstname, ":lastname" => $lastname));
+				
+		$user['userId'] = $id;
+		$user['username'] = $username;
+		$user['password'] = $password;
+		$user['email'] = $email;
+		$user['firstname'] = $firstname;
+		$user['lastname'] = $lastname;
+		
+		return $user;
 	}
 
 }

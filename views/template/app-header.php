@@ -22,6 +22,6 @@
 		<header>
 			<a id="logo" href="<?php echo $GLOBALS['web_root']; ?>">PROJECT NAME</a>
 			<!-- Add one more attribute from slides -->
-			<span><?php echo($_SESSION["user"]["username"])?></span>
+			<a href="<?php echo $GLOBALS['web_root']; ?>?action=account"><?php echo($_SESSION["user"]["username"])?></a>
 			<a href="<?php echo $GLOBALS['web_root']; ?>?action=action_user_logout">log out</a>
 		</header>

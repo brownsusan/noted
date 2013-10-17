@@ -1,30 +1,31 @@
 <?php
 class noteModel{
 
-	public function createNote($title = '', $body = '', $category_id = 1){
+	public function createNote($userId ='', $title = '', $body = '', $category_id = 1){
 		//Connect to database
 		$db = new PDO ("mysql:hostname=localhost;dbname=ssl_note","root","root");
 		//Make a variable for the sql query
 		$sql = "insert into note(
+				noteUserId,
 				title,
 				body,
 				categoryId)
-				Values(:title, :body, :categoryId)";
+				Values(:noteUserId, :title, :body, :categoryId)";
 		//Prepare the statement - store it in a variable
 		$statement = $db -> prepare($sql);
 		//Execute the statement - passing all the values to the query that we received when the function is called
-		$statement -> execute(array(":title" => $title, ":body"=>$body, ":categoryId" => $category_id));
+		$statement -> execute(array(":noteUserId" => $userId, ":title" => $title, ":body"=>$body, ":categoryId" => $category_id));
 	}
 
 	//Function to get all Notes
-	public function getNotes(){
+	public function getNotes($userId){
 		//Connect to database
 		$db=new PDO("mysql:hostname=localhost;dbname=ssl_note","root","root");
 		//Prepare a sql query for the database I just connected to - store it in a var
 		//where userId=:useryId - will need a userId parameter passed in
-		$st = $db->prepare("select * from note order by noteId desc");
+		$st = $db->prepare("select * from note where noteUserId = :userId order by noteId desc");
 		//Execute the query
-		$st->execute();
+		$st->execute(array(":userId" => $userId));
 		//Fetch everything that was returned from the query - store it in a var
 		$obj = $st->fetchAll();
 		//Return the var

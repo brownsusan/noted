@@ -1,28 +1,29 @@
 <?php
 class categoryModel{
 
-	public function createCategory($title = ''){
+	public function createCategory($userId = '', $title = ''){
 		//Connect to database
 		$db = new PDO ("mysql:hostname=localhost;dbname=ssl_note","root","root");
 		//Make a variable for the sql query
 		$sql = "insert into category(
+				categoryUserId,
 				title
 				)
-				Values(:title)";
+				Values(:categoryUserId, :title)";
 		//Prepare the statement - store it in a variable
 		$statement = $db -> prepare($sql);
 		//Execute the statement - passing all the values to the query that we received when the function is called
-		$statement -> execute(array(":title" => $title));
+		$statement -> execute(array(":categoryUserId" => $userId, ":title" => $title));
 	}
 
 	//Function to get all Notes
-	public function getCategories(){
+	public function getCategories($userId = ''){
 		//Connect to database
 		$db=new PDO("mysql:hostname=localhost;dbname=ssl_note","root","root");
 		//Prepare a sql query for the database I just connected to - store it in a var
-		$st = $db->prepare("select * from category order by categoryId");
+		$st = $db->prepare("select * from category where categoryUserId = :userId order by categoryId");
 		//Execute the query
-		$st->execute();
+		$st->execute(array(":userId"=>$userId));
 		//Fetch everything that was returned from the query - store it in a var
 		$obj = $st->fetchAll();
 		//Return the var
