@@ -6,7 +6,6 @@ $viewModel = new viewModel();
 $user = $_SESSION['user'];
 $userId = $_SESSION['user']['userId'];
 
-
 $note_model = new noteModel();
 // this function gets all the notes from a database
 $notes = $note_model -> getNotes($userId);
