@@ -1,8 +1,6 @@
 <?php
 
-protector::protect();
-
-$userId = $_SESSION['user']['userId'];
+$userId = $_GET['user_id'];
 
 
 $note_model = new noteModel();
