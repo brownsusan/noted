@@ -1,15 +1,11 @@
 <?php
 header('Content-type: text/xml');
 
-// MLoad is basically a require_once
-
-// this is my equivalent of the protector
+$userId = $_GET['user_id'];
 
 // Load Data
 $note_model = new noteModel();
-$notes = $note_model -> getNotes($_SESSION['user']['userId']);
-
-/* exit(json_encode($notes[0])); */
+$notes = $note_model -> getNotes($userId);
 
 $xml = "<notes>";
 //make a for each loop for notes at note

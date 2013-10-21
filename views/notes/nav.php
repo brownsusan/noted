@@ -28,6 +28,7 @@
 		?>
 	
 	<footer>
+		<a href="<?php echo $GLOBALS['web_root']; ?>?action=example_api_fetch&id=<?php echo $_SESSION['user']['userId']; ?>">JSON</a>
 		<p>FOOTER STUFF HERE &copy; 2013</p>
 	</footer>
 </div>
