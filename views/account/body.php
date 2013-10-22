@@ -1,3 +1,4 @@
+	<div class="account">
 		<div>
 			<span>First Name: </span>
 			<span><?php echo $_SESSION['user']['firstname']; ?></span>
@@ -18,4 +19,6 @@
 			<span>Password: </span>
 			<span>Click edit to change your password.</span>
 		</div>
+		
 		<a href="<?php echo $GLOBALS['web_root']; ?>?action=account_update">Edit</a>
+	</div>
