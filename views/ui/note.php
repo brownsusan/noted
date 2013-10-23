@@ -2,7 +2,7 @@
 	<div class="note">
 		<div class="note-header">
 			<span class="note-title"><?php echo $data['title']; ?></span>
-			<span class="note-category"><?php echo $data['categoryId']; ?></span>
+			<span class="note-category"><?php echo $data['categoryTitle']; ?></span>
 		</div>
 		<!-- END HEADER DIV -->
 		<div class="note-body">

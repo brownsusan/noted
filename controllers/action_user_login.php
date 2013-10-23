@@ -1,5 +1,15 @@
 <?php
-//Needs valdation
+
+
+if(
+	empty($_POST['email']) || !Validate::email($_POST['email']) ||
+	empty($_POST['password']) || !Validate::password($_POST['password'])
+){
+	header('Location: '.$GLOBALS['web_root']);
+	exit;
+}
+
+
 $email = $_POST['email'];
 $password = md5($_POST['password']);
 

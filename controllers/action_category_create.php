@@ -1,7 +1,16 @@
 <?php
 protector::protect();
 
-//Needs valdation
+
+if(
+	empty($_POST['category'])
+){
+	header('Location: '.$_SERVER['HTTP_REFERER']);
+	exit;
+}
+
+
+
 $userId = $_SESSION['user']['userId'];
 $title = $_POST['category'];
 

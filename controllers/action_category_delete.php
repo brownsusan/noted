@@ -5,7 +5,7 @@ protector::protect();
 $category_id = $_GET['category_id'];
 
 if($category_id == 1){
-	header('Location: '.$GLOBALS['web_root'].'?action=notes');
+	header('Location: '.$_SERVER['HTTP_REFERER']);
 	exit;
 }
 

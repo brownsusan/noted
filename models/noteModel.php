@@ -23,7 +23,10 @@ class noteModel{
 		$db=new PDO("mysql:hostname=localhost;dbname=ssl_note","root","root");
 		//Prepare a sql query for the database I just connected to - store it in a var
 		//where userId=:useryId - will need a userId parameter passed in
-		$st = $db->prepare("select * from note where noteUserId = :userId order by noteId desc");
+		$st = $db->prepare("select * from note
+							join category on note.CategoryId = category.categoryId
+							where noteUserId = :userId 
+							order by noteId desc");
 		//Execute the query
 		$st->execute(array(":userId" => $userId));
 		//Fetch everything that was returned from the query - store it in a var

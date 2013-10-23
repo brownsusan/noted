@@ -1,6 +1,18 @@
 <?php
 protector::protect();
-//Needs valdation
+
+if(
+	empty($_POST['note_id']) || !is_int($_POST['note_id']) ||
+	empty($_POST['title']) ||
+	empty($_POST['body']) ||
+	empty($_POST['category'])
+){
+	header('Location: '.$_SERVER['HTTP_REFERER']);
+	exit;
+}
+
+
+
 $note_id = $_POST['note_id'];
 $title = $_POST['title'];
 $body = $_POST['body'];

@@ -1,6 +1,6 @@
 body {
 	margin: 0 auto;
-	font-family: helvetica;
+	font-family: helvetica, arial, sans-serif;
 	background: url('/php/img/bg-1.png') no-repeat;
 	background-position: 0 30px;
 	background-attachment: fixed;
@@ -54,7 +54,7 @@ header {
 
 .home-login {
 	float: right;
-	width: 35%;
+	margin-right: 10px;
 }
 
 .app-header{
@@ -76,8 +76,42 @@ header {
 
 
 
+/*---------------- Landing --------------*/
+#sign_up_form{
+	background: rgba(290, 290, 290, 0.7);
+	color: #333;
+	width: 20%;
+	padding: 25px;
+	float: left;
+	float: right;
+	clear: both;
+	border-radius: 2px;
+	box-shadow: 0 0 .5em rgba(0, 0, 0, 0.4);
+	margin-top: 8%;
+	margin-right: 10%;
+}
+
+
+#sign_up_form label{
+	display: inline-block;
+	width: 150px;
+}
+
+#sign_up_form input{
+	width: 200px;
+}
+
+
+
 
 /*---------------- Navigation --------------*/
+#create_new_category{
+	width: 100%;
+	padding: 2px;
+	margin: 0px auto 10px;
+}
+
+
 .note-nav {
 	float: left;
 	padding: 1%;
@@ -90,7 +124,7 @@ header {
 	color: #222;
 	z-index: 1001;
 	overflow: scroll;
-/* 	box-shadow: 0 0 .5em rgba(0, 0, 0, 0.6); */
+	font-family: helvetica, arial, sans-serif;
 }
 
 .note-nav ul{
@@ -106,13 +140,36 @@ header {
 }
 
 .nav-category-title{
+	border-bottom: 1px solid #666;
+}
+
+.nav-category-title{
 	color: black;
 	margin-top: 40px;
+	line-height: 30px;
 }
 
 .nav-note-title{
 	font-weight: lighter;
 	padding-left: 5%;
+}
+
+#new_category_btn, .add-note-btn{
+	background: #fefefe; /* Old browsers */
+	background: -moz-linear-gradient(top,  #fefefe 0%, #d1d1d1 49%, #dbdbdb 50%, #e2e2e2 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#fefefe), color-stop(49%,#d1d1d1), color-stop(50%,#dbdbdb), color-stop(100%,#e2e2e2)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #fefefe 0%,#d1d1d1 49%,#dbdbdb 50%,#e2e2e2 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #fefefe 0%,#d1d1d1 49%,#dbdbdb 50%,#e2e2e2 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #fefefe 0%,#d1d1d1 49%,#dbdbdb 50%,#e2e2e2 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #fefefe 0%,#d1d1d1 49%,#dbdbdb 50%,#e2e2e2 100%); /* W3C */
+	display: inline-block;
+	padding: 5px;
+	border: none;
+	border-radius: 2px;
+	color: black;
+	box-shadow: 0 0 .5em rgba(0, 0, 0, 0.4);
+	text-decoration: none;
+	font-size: 12px;
 }
 
 #search{
@@ -139,6 +196,11 @@ header {
 	clear: both;
 	border-radius: 2px;
 	box-shadow: 0 0 .5em rgba(0, 0, 0, 0.4);
+}
+
+.note-category{
+	float: right;
+	display: block;
 }
 
 .update-note, .create-note{
@@ -174,13 +236,14 @@ header {
 
 /*------------- Note Controls ------------*/
 
-.note-edit-btn, .note-delete-btn, .note-save-btn, .add-note-btn, #new_category_btn{
+.note-edit-btn, .note-delete-btn, .category-delete-btn, .note-save-btn{
 	background: rgba(290, 290, 290, 0.8);
 	display: block;
 	padding: 5px;
 	border-radius: 2px;
 	color: black;
 	box-shadow: 0 0 .5em rgba(0, 0, 0, 0.4);
+	text-decoration: none;
 }
 
 .note-edit-btn, .note-delete-btn, .note-save-btn{
@@ -209,9 +272,9 @@ header {
 	background-position: 5px 5px ;
 }
 
-.note-delete-btn{
+.note-delete-btn, .category-delete-btn{
 	background: rgba(290, 290, 290, 0.8) url('/php/img/trash.png') no-repeat;
-	background-position: 5px 5px ;
+	background-position: 5px 5px;
 }
 
 .note-save-btn{
@@ -221,4 +284,14 @@ header {
 .note-controls{
 	float: right;
 	width: 2em;
+}
+
+.category-delete-btn{
+	display: inline-block;
+	width: 10px;
+	height: 10px;
+	background-size: 15px 15px;
+	background-position: 3px 3px;
+	text-indent: -100000%;
+	float: right;
 }
