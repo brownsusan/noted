@@ -9,7 +9,7 @@
 						<?php 
 						
 						foreach($data as $category){
-							echo('<option value="'.$category['categoryId'].'">'.$category['title'].'</option>');
+							echo('<option value="'.$category['categoryId'].'">'.$category['categoryTitle'].'</option>');
 						}
 						
 						?>

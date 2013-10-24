@@ -7,13 +7,13 @@ class categoryModel{
 		//Make a variable for the sql query
 		$sql = "insert into category(
 				categoryUserId,
-				title
+				categoryTitle
 				)
-				Values(:categoryUserId, :title)";
+				Values(:categoryUserId, :categoryTitle)";
 		//Prepare the statement - store it in a variable
 		$statement = $db -> prepare($sql);
 		//Execute the statement - passing all the values to the query that we received when the function is called
-		$statement -> execute(array(":categoryUserId" => $userId, ":title" => $title));
+		$statement -> execute(array(":categoryUserId" => $userId, ":categoryTitle" => $title));
 	}
 
 	//Function to get all Notes
@@ -26,7 +26,6 @@ class categoryModel{
 		$st->execute(array(":userId"=>$userId));
 		//Fetch everything that was returned from the query - store it in a var
 		$obj = $st->fetchAll();
-		//Return the var
 		return $obj;
 	}
 	

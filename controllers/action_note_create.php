@@ -17,7 +17,7 @@ if(
 $userId = $_SESSION['user']['userId'];
 $title = $_POST['title'];
 $body = $_POST['body'];
-$category = $_POST['categoryTitle'];
+$category = $_POST['category'];
 
 if($category == ''){
 	$category = 1;

@@ -7,7 +7,7 @@ $viewModel = new viewModel();
 $note_id = $_GET['note_id'];
 
 //Temp user data
-$user = array('name' => 'susie');
+$user =  $_SESSION['user']['userId'];
 
 // Instantiating the noteModel which gets its information from a database
 $note_model = new noteModel();
@@ -17,7 +17,7 @@ $note_model = new noteModel();
 $note = $note_model -> getNote($note_id);
 
 $category_model = new categoryModel();
-$categories = $category_model -> getCategories();
+$categories = $category_model -> getCategories($user);
 
 $data = array(
 	'note' => $note,
@@ -33,5 +33,5 @@ $data = array(
 $viewModel -> getView('views/template/app-header.php', $user);
 //Getting the update view, and giving it the data for the note that was clicked 
 $viewModel -> getView('views/note_update/body.php', $data);
-$viewModel -> getView('views/notes/nav.php');
+$viewModel -> getView('views/notes/nav.php', $categories);
 $viewModel -> getView('views/template/foot.php');
