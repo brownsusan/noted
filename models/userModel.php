@@ -40,13 +40,13 @@ class userModel{
 		
 		$sql = "insert into category(
 				categoryUserId,
-				title
+				categoryTitle
 				)
-				Values(:categoryUserId, :title)";
+				Values(:categoryUserId, :categoryTitle)";
 		//Prepare the statement - store it in a variable
 		$statement = $db -> prepare($sql);
 		//Execute the statement - passing all the values to the query that we received when the function is called
-		$obj = $statement -> execute(array(":categoryUserId" => $user['userId'], ":title" => "Notes"));
+		$obj = $statement -> execute(array(":categoryUserId" => $user['userId'], ":categoryTitle" => "Notes"));
 		
 		
 		return $user;
