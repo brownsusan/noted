@@ -6,10 +6,7 @@
 		<input name="category" type="text" id="create_new_category" placeholder="Enter a new category name..."/>
 		<input type="submit" href="#" id="new_category_btn" value="Create Category" />
 	</form>
-	<ul class="categories">
-	
-<!-- 		<a href="#" id="new_category_btn">Add new category</a> -->
-		
+	<ul class="categories">		
 		<!-- for each loop like in notes -->
 		<?php 
 			$viewModel = new viewModel();

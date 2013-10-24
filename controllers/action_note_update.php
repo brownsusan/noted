@@ -2,7 +2,7 @@
 protector::protect();
 
 if(
-	empty($_POST['note_id']) || !is_int($_POST['note_id']) ||
+	empty($_POST['note_id']) ||
 	empty($_POST['title']) ||
 	empty($_POST['body']) ||
 	empty($_POST['category'])

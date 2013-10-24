@@ -24,7 +24,7 @@ class noteModel{
 		//Prepare a sql query for the database I just connected to - store it in a var
 		//where userId=:useryId - will need a userId parameter passed in
 		$st = $db->prepare("select * from note
-							join category on note.CategoryId = category.categoryId
+							join category on note.categoryId = category.categoryId
 							where noteUserId = :userId 
 							order by noteId desc");
 		//Execute the query
