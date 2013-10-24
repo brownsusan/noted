@@ -13,7 +13,7 @@ $query -> execute();
 
 $query = $db_connection -> prepare('CREATE TABLE IF NOT EXISTS category (
   categoryId INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-  title VARCHAR(50),
+  categoryTitle VARCHAR(50),
   updated DATETIME,
   created DATETIME,
   categoryUserId INT
